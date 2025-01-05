@@ -1,4 +1,4 @@
-\usepackage{mathtools}
+
 
 # QC
 
@@ -40,6 +40,7 @@ Here’s a detailed explanation of each point, helping you to grasp the fundamen
 ---
 
 #### **3. Mathematical Representation of Quantum State**
+\usepackage{mathtools}
 - A quantum state is represented as a **vector** in a complex vector space.
   - Single qubit: \(|\psi\rangle = a|0\rangle + b|1\rangle\), where \(a, b \in \mathbb{C}\) and \(|a|^2 + |b|^2 = 1\).
   - Multi-qubits: Use the **tensor product** to combine states, e.g., \(|\psi\rangle \otimes |\phi\rangle\).
