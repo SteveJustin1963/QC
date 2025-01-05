@@ -120,4 +120,5 @@ Here’s a detailed explanation of each point, helping you to grasp the fundamen
 #### **Deutsch’s Algorithm**
 - Delve into this foundational algorithm to understand quantum speedup.
 
+
 --- 
