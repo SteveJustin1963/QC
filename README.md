@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/bc7053c5-bf58-401f-bbc9-be4cb36125bb)
+![image](https://github.com/user-attachments/assets/1ad9ff5a-a098-4937-b1a2-5a8b3bd1e7db)![image](https://github.com/user-attachments/assets/bc7053c5-bf58-401f-bbc9-be4cb36125bb)
 
 # QC
 
@@ -221,13 +221,159 @@ Well, quantum computers are currently not large enough to run Shor's algorithm. 
 And additionally, security has adapted in the past, as technology improves, so in post-quantum cryptography we'll be able to assist in our transition to a quantum future. 
 
 
+# Summary
+
+Classical computers are everywhere in the form of supercomputers, smartphones, and laptops. Advances in classical computation have become a catalyst for many scientific and technological innovations, but there are still many problems that are difficult for classical computers to solve. Examples of such computational tasks include modeling natural processes like determining molecular structure and problems that have large state spaces for possible outcomes like the Travelling Salesperson Problem. Quantum computers are projected to have the ability to solve these kinds of problems in a much more efficient manner than the best-known classical approaches.  
+
+Quantum computing resources are targeted for applications in chemistry, optimization, security, and machine learning. While current quantum hardware, which we will discuss in the next section, may be modest in size, experiments have already demonstrated that the technique in which quantum information encodes data allows for significant computational gains. We do not yet have large enough quantum computers to implement notable quantum algorithms such as Shor’s algorithm for factoring, but it is anticipated that more robust quantum computers will appear in the decades to come.  
+
+# Quantum Hardware
+
+![image](https://github.com/user-attachments/assets/e867955c-3f06-4c1a-af14-a3efaf66fc6a)
+
+Start of transcript. Skip to the end.
+Hello! Today I'd like to give you a little  bit of an introduction to quantum hardware.
+Computers come in many forms.
+There are familiar ones, like computers, laptops, tablets, and even your smartphone. 
+There are less obvious computers, like those that control robotic arms or your microwave, the hundreds in your car, satellites, even smart refrigerators and thermostats. Computers are all around us and they come in many forms. 
+Yet, there are now quantum computers. Why is it that all of these myriad devices are actually quite similar when quantum computers are so different? 
+
+![image](https://github.com/user-attachments/assets/baf9ee84-9b8d-4015-b8a6-2cc76b448a1d)
+
+The classical devices are all different variations of the same technology with very similar ways of programming them. They are merely different trade-offs.
+A satellite needs reliability because you can't repair it easily and the rays from the Sun are very damaging without Earth's atmosphere to protect it.  
+Microwaves need very little storage or speed, so they are optimized for low cost. 
+Laptops and desktops provide large storage and fast computation, but supercomputers supercharge those two aspects.
+Phones, tablets, and watches depend heavily on communication with much less storage.  
+
+![image](https://github.com/user-attachments/assets/d61f9f97-923b-4242-b492-4e3295e0b2a5)
+
+There are currently many competing technologies for implementing quantum computers. 
+There are currently many competing technologies for implementing quantum operations. 
+Why? Because it is very difficult to sustain quantum operations accurately for any length of time.
+These different technologies trade off speed, reliability, and scalability. Ion track machines have taken an early lead because they depend on very mature laser technology, allowing them to leverage decades of development in that area.
+For small systems, they have fast communication between qubits and the manufacturing is more consistent.
+However, it is hard to build a large machine and they are slow - a thousand times slower than other technologies. Superconducting technologies leverage the decades of development in silicon used for classical computers.
+However, they are much larger than ion trap machines. 
+These just show a few of the examples of technologies being used to implement quantum technologies. 
+
+# A Historical Perspective 
+
+ Start of transcript. Skip to the end.
+Hello! Today, before we dive into quantum operations, I want to give you a little bit of a historical perspective.
+It gives you insight into why we're teaching you to code in quantum computing much differently from how one would normally go about learning to code in a classical computing environment. So let's look at the development of classical computers.
+Classical computers were designed to mimic human operations. Calculations, in fact.
+So, Pascal invented a calculator.
+And in World War II, the development was driven by the need to calculate firing tables that would look at the angle, and the distance you needed to fire, and weather conditions so that that we could have accurate firing during the war.
+And it was actually other people, like Ada Lovelace, who envisioned other uses for this like composing music. And it was Grace Hopper who took a step back and said, "Wait these are really hard to program. We should really use a programming language that has some English language features instead of writing all of our programs just so the machine can understand it."
+And over decades, these languages have changed and developed so that they're quite easy to understand, especially the ones designed for children learning coding.
+
+![image](https://github.com/user-attachments/assets/4f99ba3d-6c49-4a3e-833a-62cf6007ecda)
+
+Development of quantum computing has been completely different.
+This started with scientists observing phenomenon and not knowing what to do with it.
+And eventually, there have been many uses. Only one of which is computing.
+And so, someone said, "Oh, well, maybe we could harness these for for computation." And only if we harness these unique features are we going to get something that gives us an advantage over classical computing, because we're looking at a technology that wasn't designed for that.
+Right. Quantum computers were never designed to mimic how humans perform tasks. We already have a technology that does that and does that well for certain tasks, certain tasks that humans do quickly.
+And so these are the products of an observation of these unique features that can be harnessed. And so the only way we're going to win is if we are able to do things that humans can't do quickly, in a way that somehow the quantum properties allow it to be faster. So in some sense, quantum computing is a hammer in search of a nail.
+What are those applications that are both very hard for classical computers, intractable in fact, and also able to be solved on quantum computers? 
+
+![image](https://github.com/user-attachments/assets/b4e81dcc-64be-4c32-a9c4-dcca7b332120)
+
+So really, the differences are at the most basic level and we don't yet have languages that hide those basic level details.
+So, to understand how quantum computers perform computation, we really need to start with those basic quantum operations.
+And we recognize that this is very different from how people learn to program classical computers today.
+But that's how we go about it until someone figures out how to express those operations and features in a way that hides the detail and still retains the ability to get the benefit out of it. We're stuck with this system and no one has thought exactly how to do that yet successfully.
+
+# NOT, SWAP, C-NOT
+
+Hello! Today we're going to talk about quantum operations. 
+And this is inspired by the visual representation presented in “Q is for Quantum'' by Terry Rudolph. 
+
+![image](https://github.com/user-attachments/assets/c5c0b98f-1b8c-4b87-b340-907ce3e8938b)
+
+So imagine that we drew operations this way. Let's say we have an operation named “eat one cookie.”
+I would start with a plate with four cookies on it and, if the operation “eat one cookie” is applied, then I have three cookies left.
+Okay. Likewise, I could start with three cookies and apply the “eat one cookie” operation, and I would be left with two cookies.
+So, a few important points about this representation. 
+One is that you can see operations progressing from left to right.   That is merely the order of operations. It doesn't mean that this plate moved through a box, a cookie was eaten inside the box, and then it emerged on the other side. This is just an abstract representation that tells you that you started with four cookies, and then the “eat one cookie” operation was applied, and then the result was three cookies. We could also have two operations in a row, in sequence. 
+So if we started with four cookies, and then we ate one cookie two times (twice), then we would end up with two cookies instead of three. So once again this doesn't mean that there were two separate “eat one cookie” boxes. 
+It just means that the “eat one cookie” operation was applied twice.  
+
+![image](https://github.com/user-attachments/assets/01470a7a-91ce-4a18-be36-39e702920627)
+
+All right. So let's imagine an operation we call “not,” and in quantum we have two values. 
+So it could be apples and bananas, it could be happy and sad, and so a not operation toggles between these two values.
+So if we had a system where we had apples and bananas, if I started with a banana and put it through a not I would get an apple. If I started with an apple I would get a banana.
+And so we could use any two items, and the not toggles between them.
+So, in a quantum system, we're using zero and one and we've put them inside this ket.  
+
+![image](https://github.com/user-attachments/assets/5ad251d8-f55a-41a8-b3ea-aa3ec230ab30)
+
+We'll learn about the bra-ket notation later, but right now we just know that we have a zero and one.
+We will label the white ball zero and the black ball one. 
+So in this representation we have two choices, white and black balls. So the not operation toggles between them. So if I start with a white ball then I end up with a black ball; if I start with a black ball I end up with a white ball. 
+
+![image](https://github.com/user-attachments/assets/238fac3b-08e4-4c16-b77d-3b113011f2d8)
+
+All right. So I'm going to have a series of examples in this video that are challenges for you to figure out.
+And so, each time you see one, feel free to pause the video, think about it, have a guess.
+You want to predict the answer and then put the video back on, and I'll go through the solution. So go ahead and pause the video now and try to figure out what it would be if we had multiple nots in a row in these cases.
+Okay, so let's go through the solutions. If you start with a white, apply a not, that'll be black, and apply it again, it'll be white again. 
+
+![image](https://github.com/user-attachments/assets/10e4f934-89f0-4feb-8228-ab5b505ae69b)
+
+Likewise, if I start with a black, then we'll end up with a white after a single not and then a black after a second not.
+So we've applied these nots twice. We get back to the original value. 
+Okay, all right. So if I were to apply it three times, the first two get it back to the original value, and now I apply it again and I'm left with a white ball. 
+
+![image](https://github.com/user-attachments/assets/c447e09a-ddf2-419f-987d-da53ace7a468)
+
+All right, so here's the second operation. It's called the “swap” operation, and in this case each ball takes on the value of the opposite ball.
+So it's not moving the balls. Notice the dotted lines are to indicate that the top ball is still the top ball, it just changed color.
+So if we have a black on top and a white on the bottom starting out, then we'll have a white on top and black on the bottom at the end.
+Likewise, the white on the top and black on the bottom will end up with a black on the top and white on the bottom.
+If the two values coming in are the same, then a swap does nothing. They will remain the same. 
+
+![image](https://github.com/user-attachments/assets/ec8d5617-f1f0-4866-b075-0b0331c22ca1)
+
+
+All right, so now let's try some multiple swaps, as well as combining nots and swaps. 
+So again, you can pause the video, think about it, predict what the outcomes are, and then we'll check our work.
+Okay. So if I start with a black ball on top and white ball on the bottom, after a single swap the white will be on the top and the black will be on the bottom.
+And then the values will swap back again, so we end up with the same values we started with, just like the not operations. So these are their own inverse. If we apply it twice, we get what we started with. All right, let's look at the second one. So first I will apply the not gate to the bottom ball, which gives me a white ball on the bottom and a black ball on the top, and then a swap so they'll swap values but not location. So now the top ball will become white and the bottom ball will become black. 
+
+![image](https://github.com/user-attachments/assets/1a89c814-a144-49a6-a82e-1aefc0678605)
+
+
+All right, so now our third operation is called a “controlled not.” This is interesting because the swap operation was symmetric.  
+It didn't matter which one was which, the operation was the same.  A controlled not is not like that. Order matters. So let's look at this. 
+We have two inputs. One is called the target and one is called the control. 
+So the control does not change, and if the control is white then the target does not change.  If the control is black then the target changes. So we can see here that, for the two left-handed operations, the control ball was white.
+And so the inputs in the outputs are the same. 
+For the second operation, in the right hand column, we can see that the control ball was black, so that means the output applied a not.    We applied a not to the target and so the output of the target is opposite of the input. 
+
+![image](https://github.com/user-attachments/assets/12b4cbaa-0c93-488c-ab60-260d92301fed)
+
+All right, so let's try a few. 
+Okay, let's go through them. So first we swap the black and the white. 
+So now the top ball is white and the bottom ball is black, and then we apply the c-not. 
+And the c-not control is white, which means the outcome will not change. Now let's look at the second one. We have the not gate, which toggles the black ball from black to white and then we have the c-not.   
+And we can see with the c-not in this case the control is black and so we will toggle the value of the target. So now the target becomes black.
+And now we have two black balls going into a swap. We know that if we have two of the same value going into swap, then none of the values change. So we end up with two black balls. 
+
+![image](https://github.com/user-attachments/assets/12ea8b87-6c13-4a48-a879-fbe600cc9b3f)
+
+
+Okay, let's look at this one. I want you to look at this picture very carefully because what's important here is that I've swapped the order of the control and target on the second one because the order of the inputs matters.
+We can connect the c-not in either way we want. 
+And so you can see that the symbol, the filled-in spot, versus the plus sign with the spot are opposite in these two. So we're going with a zero and a one into the first c-not gate and in the first c-not gate the control is white.
+And so we end up with a white ball and a black ball in the first one. 
+But in the second one we can see that now the control is black, and so we will toggle the top bit.
+Okay, so I just want you to be aware that when you're looking at a c-not it is not always the case that the control is on top and the target is on the bottom. You always have to look for that symbol.
+ 
 
 
 
 
 
-
-
-
-
-  
