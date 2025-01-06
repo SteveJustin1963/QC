@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/bc7053c5-bf58-401f-bbc9-be4cb36125bb)
 
 # QC
 
@@ -131,25 +131,97 @@ Optimization problems involve finding the best solution out of all possible solu
 Imagine you are leaving home and on your way to work, but you want to stop for coffee. There is only one possible path for you to take: from home, to the coffee shop, and then to work. But perhaps you also need to send a letter at the post office. Now you have two options for your trip: the post office first and then the coffee shop or the coffee shop first and then the post office before going to work. 
 
 Now let’s add a third stop at the bank. Now the options for paths from home to work include:
+
 ```
 coffee shop, post office, bank
 coffee shop, bank, post office
 bank, coffee shop, post office
 bank, post office, coffee shop
 post office, bank, coffee shop
-post office, coffee shop, bank    ```
+post office, coffee shop, bank
+```
+
 The problem of deciding what path to take from home to work is an example of the Traveling Salesperson Problem, and the number of possible solutions grows as a factorial, n! = n*(n-1)*(n-2)...*1, where n is the number of stops that must be taken. As the value of n increases, the total number of possible solutions calculated by n! increases rapidly. 
 
 Returning to the example of the trip from home to work, we can see how the number of paths increases as a function of the included stops:
+
 ```
 3 stops: 3! = 6 paths
 4 stops: 4! = 24 paths 
 5 stops: 5! = 120 paths
 6 stops: 6! = 720 paths
-7 stops: 7! = 5,040 paths```
+7 stops: 7! = 5,040 paths
+```
+
 By the time we reach 7 stops, there are more than FIVE THOUSAND options to consider. Which is best? How would you know? 
 
 The decision of what makes one path the ‘best’ as compared to the rest is often made with respect to reducing a cost such as number of required resources for the trip or total time taken for the journey. For example, in their routing problem, UPS optimizes routes for minimal left turns rather than shortest route.
+
+
+# Practice Questions due Jan 11, 2025 02:45 AEDT
+Visit the website that hosts a simulation of the Traveling Salesman Problem that optimizes for the shortest path. Pick a map and complete the simulation at least twice, once with 10 stops and once with 30 stops. For each simulation, take note of the length of the optimal tour, length of your tour, and calculation time (how long it took the computer to find the optimal route). Afterwards, feel free to continue experimenting with the simulator by varying the number of included cities each time.
+
+https://algorithms.discrete.ma.tum.de/graph-games/tsp-game/index_en.html
+
+Travelling Salesperson Simulation
+Yes	No
+Were you always able to find the optimal route?
+
+
+Audit Learners: Travelling Salesperson Simulation
+
+Visit the website that hosts a simulation of the Traveling Salesman Problem that optimizes for the shortest path. Pick a map and complete the simulation at least twice, once with 10 stops and once with 30 stops. For each simulation, take note of the length of the optimal tour, length of your tour, and calculation time (how long it took the computer to find the optimal route). Afterwards, feel free to continue experimenting with the simulator by varying the number of included cities each time.
+
+
+Consider the following questions: 
+
+Were you always able to find the optimum route? 
+As the number of cities on the route increased, how did the amount of time it took the computer to find the optimal route change? 
+
+# Connection to Quantum Computing
+
+As the number of cities increases in the Traveling Salesman simulation, so do your connection options in your attempt to optimize for the shortest path between them all. Because of the way classical computers store information, they are inefficient at solving optimization problems, taking long periods of time to search for the optimum set of variables that generates the best outcome for reducing cost, or in this case, total distance travelled.  The way quantum computers store information could potentially allow them to solve complex optimization problems, like the Travelling Salesman Problem, much quicker than classical computers can. 
+
+In this course, we will learn about some of the advantages that quantum computers have, as well as the constraints that exist. In other words, we will explore the types of operations quantum computers can do quickly or compactly that allows them to outperform classical computers for certain problems. We will also discuss the things classical computers can do that quantum computers cannot!
+
+# Encryption and Quantum Computing
+
+![image](https://github.com/user-attachments/assets/23a573de-753d-4dbe-b00b-e50381e3ce70)
+
+In this video, we're going to discuss encryption and quantum computing, and the intersections between the two.
+We currently live in a data-driven world and I say that because we have so many internet users out there transmitting a lot of data. 
+In 2020, we saw approximately 4.5 billion internet users and each of them are transmitting an enormous amount of data in the form of communications, such as emails and texts and social network interactions, and then transactions for commerce or online banking.
+So all these communications are holding very sensitive data so we want to make sure that these communications are kept secure and encryption helps us do that.
+
+![image](https://github.com/user-attachments/assets/4113f526-53b7-4561-be7a-e66cf243c120)
+
+So how does encryption work? On a high level, we have a message that, here in this example, we see a message to our friend. And we combine that with a secret key in order to generate ciphertext.
+Once we have ciphertext, it almost makes the message seem completely random and unusable so the contents of that message are kept safe.
+
+![image](https://github.com/user-attachments/assets/a80af141-4b60-4120-b0b7-c97ba1f645c9)
+
+So how is encryption secure? Encryption is based on one-way cryptographic functions.  
+A one-way function is a function that's easy to compute but difficult to invert. Multiplication can be thought of as an example and that's because it's easy to multiply but a little bit more difficult to factor.
+That actually becomes the basis of key generation for a lot of encryption schemes because we take prime numbers and then we multiply them in order to create a key. Knowledge of the keys or the key factors allows for data decryption, so we want to make sure that we keep those secret and away from anyone who might want to try to read the data.
+So we think about generating a key. We can think about it, uh, in like how we think of mixing paint. It's easy to mix paint but it's really difficult to unmix paint once it's combined.
+So we have here two prime numbers that we multiply together but once we have them multiplied together it's difficult to pull them back out into their factors. 
+
+![image](https://github.com/user-attachments/assets/184dfdb1-a2d4-4413-b93d-8fbf925360ac)
+
+So how does quantum computing disrupt modern encryption? Modern encryption uses large keys and because it's hard to, it's really challenging to factor a large number, our data stays relatively secure just because it's a pretty intractable problem to try to come up with the factors for that key.
+So for example, if we have a key that is 1024 bits in length that is equivalent to 309 decimal digits and even the best quantum or even the best classical computers will have a difficult time factoring that value.
+So what if factoring was more efficient? Encryption would essentially be broken. And we have Shor's algorithm, which is a quantum algorithm that factors numbers exponentially faster than the best classical algorithm.
+So, if we have a quantum computer that can implement Shor's algorithm, in theory all encrypted messages--past and present--would be vulnerable to decryption. 
+
+![image](https://github.com/user-attachments/assets/30070c66-e17f-4f62-9a13-c7b54c80034c)
+
+
+So with that in mind, how concerned should we be?  
+Well, quantum computers are currently not large enough to run Shor's algorithm. And decades are needed to make our computers a little bit more robust, in the sense that we need to refine and scale our devices.
+And additionally, security has adapted in the past, as technology improves, so in post-quantum cryptography we'll be able to assist in our transition to a quantum future. 
+
+
+
 
 
 
