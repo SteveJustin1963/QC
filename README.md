@@ -373,8 +373,8 @@ But in the second one we can see that now the control is black, and so we will t
 Okay, so I just want you to be aware that when you're looking at a c-not it is not always the case that the control is on top and the target is on the bottom. You always have to look for that symbol.
  
 
-- https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/Audit_QOps1_practice_questions.pdf
-
+- Audit_QOps1_practice_questions.pdf
+- Audit_Intro_to_QC_and_QOps_1_Homework.pdf
 
 
 
