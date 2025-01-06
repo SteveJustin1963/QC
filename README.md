@@ -379,3 +379,91 @@ Okay, so I just want you to be aware that when you're looking at a c-not it is n
 
 
 
+# Quantum Operations: Part 2 / Section Overview
+In this section, we continue learning about operations and introduce a physical concept critical to quantum computing: superposition. Qubits in superposition don't just have one value or another - they have two values at once, with a probability of reading one or the other when you measure the qubit. We’ll also talk about another attribute that is important for quantum computation: phase.
+
+# Introduction to the H Gate
+
+![image](https://github.com/user-attachments/assets/15f5b757-281f-4aa1-9f01-608556b13ffb)
+
+Hello! Today we're going to talk about the quantum H gate.
+It is a probabilistic gate and we'll go into what that means in a moment.  
+Now, let's look at how this gate works. We put in a black ball, maybe we get out a white ball.  
+
+![image](https://github.com/user-attachments/assets/b11ae9e7-c3cd-4221-be57-8db7e4b38424)
+
+
+ We put in a black ball, sometimes we get out a black ball.
+So, if we were to give it lots of balls in sequence, lots of black balls, we would end up with the results being half black,  half white.
+Which means that 50% of the time when we apply an H gate, we end up with a black ball and half of the times when we apply the H gate we end up with a white ball. That seems very odd. Okay. Well, likewise, it won't be any surprise to you that if you give it a white ball and apply the H gate, then sometimes you get a white ball out and sometimes you get a black ball. And by out, I don't mean physically out of it. When we apply an H gate, our result is either a black ball or a white ball. And just like the black ball, if I were to do this many times then my results: 50% of the time would be white and 50% of the time would be black. You might be thinking this seems completely random!   
+
+![image](https://github.com/user-attachments/assets/fd479d0c-e782-4e71-aafe-39d05ec450d9)
+
+
+Well, let's look at what happens. The observed outcome from a single gate is, in fact, random.
+So, we'll indicate this here. We need something else now, we need a measurement symbol.
+So that means that whatever H produces, if I apply H to a white ball and then measure the result, it's either black or white. But before I measure the result, it can be also either black or white; but I don't know what it is. I don't know the state of it until I measure it. And this is what all of this has been, we just haven't really talked about the role of measurement and we're actually going to talk about it a lot more in the next video. 
+But for now, we'll look at the fact that this means that when I measure, I have a 50/50 chance of measuring a black value or a white value.
+But the probability itself is predictable -- it's not the case that 70% of the time I get a black ball and 30% of the time I get a white ball. It is 50/50.
+Okay, but in a single instance, I have no idea if I'm going to get a black or a white ball -- it could be either one. So we can depict this this way.
+
+![image](https://github.com/user-attachments/assets/71a11965-9b55-4574-93c3-5f05a120cec9)
+
+
+Alright, so we're going to explore this H gate a little bit, because it ends up covering a lot of quantum concepts that are important.
+So what is going on with these  probabilistic gates? We'll look at some of their odd behavior and how to explain it, and then we need to figure out how to represent this probabilistic output visually in a way that we can have it be inputs and outputs to other gates. And then in this course, we're also going to start introducing the mathematics so that you can calculate the values and predict what's going to happen, and so we'll need a representation, a mathematical representation, and then we'll need to learn the operations to calculate them. 
+
+![image](https://github.com/user-attachments/assets/847f1728-db79-4357-92ae-5b1e3519ee62)
+
+
+We won't do this all right now, we'll do this over the course of several videos.
+So the first thing we want to ask is, is the H gate truly random and how would we know?
+It appears random right now and what I mean by random is that if I looked inside, no matter what I give it, there's a 50% probability that nothing will happen to that and a 50% probability that I will apply a NOT gate to that. 
+
+![image](https://github.com/user-attachments/assets/e498a1d0-98e6-472f-bed0-aafd99427395)
+
+
+That's what we'll describe as random. And so let's look at whether this is random. 
+
+![image](https://github.com/user-attachments/assets/95db1158-8832-4306-a55b-211e909b54be)
+
+
+So, if I had random gates and I gave it a set of black balls or a set of white balls, and I applied two random gates in a row -- what would happen?  
+Well, it would all be random, right? Because at the end of the first gate, I would have either something that's black or white and then I would have a 50/50 probability of flipping that back or keeping that value.
+And so it would look like once I get one random gate, it doesn't matter how many I apply in a row, the output will always be 50/50 probability of white versus black values measured at the end.
+
+![image](https://github.com/user-attachments/assets/10397ecb-254d-4357-ba9d-906c307b0f51)
+
+
+Okay, but let's look at what happens with the H gate.
+If I give it a sequence of black balls and I don't just apply one H gate but I apply two in sequence, I actually get back black balls. Every time I measure, I will always get a black ball.
+And if I start with a white ball, every time I measure I will get a white ball. So that means that H is its own inverse. But if it were truly  random, we wouldn't be able to invert it because we wouldn't know if it had been flipped or not. So there must be something extra going on here. So, although it appears random when I only do one of them, it's not actually random. 
+
+![image](https://github.com/user-attachments/assets/7d6a3f20-43c7-4820-9eb8-79f62149ff4b)
+
+
+And so we need to explore what makes the H gate different from a purely random gate.
+
+![image](https://github.com/user-attachments/assets/a2861c80-4486-465a-97d1-296e9d05e51c)
+
+Alright so what we know is that after two gates it's different from a random gate.  
+We also know that there's some state in the middle of those H gates that we haven't depicted, because measurement is not the same as the state.
+So, after an H gate but before measurement, the ball can't be just simply black or white -- it needs to be something more complex after an H gate. 
+
+![image](https://github.com/user-attachments/assets/dc565197-e8ef-43d7-8b6e-529498022dd6)
+
+So what we need first is a visual representation and so we're going to represent it this way.  
+It turns out that an H gate we know has a 50/50 probability of measuring black or white.
+So this is something we've already observed and so we know  this to be true, so we're going to depict it this way -- with a rounded box, rounded rectangle, with black and white, which means equal probability of black and white.
+No matter how many things I have in this block, it means that they're equal probability of each of them. So, because there are two of them that means it's a 50/50 probability of the black or the white.
+But what you'll notice down here is that when the black ball gets applied the H gate there's a negative sign in front of that black ball. And this is indicating that even though the H gate had a probability of measuring black or white, the negative sign does not affect the probability of measuring black and white. But what you'll notice down here is that when the black ball gets applied the H gate there's a negative sign in front of that black ball.
+And this is indicating that even though the H gate had a probability of measuring black or white, the negative sign does not affect the probability of measuring black and white.
+It means there was something we were missing about the state; somehow, the state reflected the fact that the black ball had produced it versus the white ball produced it and so we're going to use the negative sign. In quantum, that actually has a physical property which is called phase. And so we'll get into that later, but right now what we need to know is that this is how we'll depict the output from an H gate. And we'll see how doing that allows us to calculate and actually figure out, “oh yes, it should go back to its original state if we apply the inverse.” 
+
+![image](https://github.com/user-attachments/assets/ef94826b-71ff-4ca0-82e3-530b0689354c)
+
+
+So, what we've figured out is that in the H gate, the states are not identical between the black and the white, but they are 50/50 probability of being measured a black or white.
+And what we know: that for random, it's also 50/50 probability of measuring black or white. But even when we go through the random again, it ends up with a 50/50 probability of black or white. So that's what's different in our observations. We'll have to see mathematically what that would mean.
+
+
