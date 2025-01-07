@@ -30,12 +30,14 @@ This is a self-paced course. Please note that access to graded problems is only 
 # Grading / Assignments
 For those enrolled in the Verified track, each student’s final grade will be computed according to the following:
 
+```
 Practice questions following videos: 20%
 Homework problems for each section: 35% 
 Exam: 45%
 Your lowest 2 scores on the practice questions will be dropped. 
-
+ 
 An overall grade of 70% or higher will be considered a passing grade. 
+```
 
 # Section Overview
 
