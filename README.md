@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1ad9ff5a-a098-4937-b1a2-5a8b3bd1e7db)![image](https://github.com/user-attachments/assets/bc7053c5-bf58-401f-bbc9-be4cb36125bb)
+ 
 
 # QC
 
