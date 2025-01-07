@@ -467,3 +467,77 @@ So, what we've figured out is that in the H gate, the states are not identical b
 And what we know: that for random, it's also 50/50 probability of measuring black or white. But even when we go through the random again, it ends up with a 50/50 probability of black or white. So that's what's different in our observations. We'll have to see mathematically what that would mean.
 
 
+# VIsual Representation of Superposition
+
+![image](https://github.com/user-attachments/assets/e2e4e894-5ccb-45f3-aa34-8c9bf9f52989)
+
+
+Start of transcript. Skip to the end.
+Okay, now I'm going to go into a few more details about how this visual representation depicts the superposition state.
+So, we've been showing a 50-50 probability, in which case we have two spots: one that's black and one that's white.
+And that indicates a 50-50 probability of measuring black or white. But what happens when we have other probabilities? The idea with this representation is that in a certain rectangle, all of the choices are equal probabilities.
+So if I have one black and three white in four different spots, that means that I have a 1/4 chance or 25% chance of measuring black and a 3/4 chance or 75% chance of measuring the white. 
+
+![image](https://github.com/user-attachments/assets/5e882643-ff2d-4459-979b-0605483a8d7d)
+
+
+Okay. So, we can also have superposition states as input and operate on them. So, let's imagine that we have a NOT gate.
+What we do is we essentially split this NOT gate so that the NOT gate is applied to each one.
+So now we have the top one going into its own NOT gate and the bottom one going into its own NOT gate.
+And so then on the other end we see that now we have the white ball on top, or the black ball has turned into a white ball on top, and the white ball has turned into the black ball on the bottom.
+
+![image](https://github.com/user-attachments/assets/fa058489-17c9-45b4-ada7-ba17717e0ceb)
+
+
+Alright. We can also do this with our four input or our four part superposition, where each one is worth 25% instead of 50%.
+So, once again, we would split this NOT gate into four little NOT gates and each state would go through this NOT gate and get to the output.
+And so we can see that if we have a state that's 25% chance of measuring black and 75% measuring white, if we put that state through a NOT gate we're going to get a state that has 25% chance of a white ball and 75% chance of a black ball.
+I hope that you also see that that's somewhat intuitive, right? A NOT should swap it and so it makes sense that my black and my white probabilities would swap.
+
+![image](https://github.com/user-attachments/assets/71baf41a-dcbd-42aa-b5a6-cb936a19e590)
+
+
+ Okay, so now let's use this to revisit some odd behavior with the H gate. So, we have the H gate and it outputs a certain superposition state.
+And we have this, we have this state, this condition where when we put it through the H gate again, it no longer is in superposition.
+And so let's look more closely at the second part of this H  gate and understand really what's going on.  
+
+![image](https://github.com/user-attachments/assets/f98a34b1-fd49-469a-95df-aaef57e1aa27)
+
+
+So, don't worry if you feel the need to come back to these slides and do the movement a little bit more slowly.
+But what we want to do is break this down. And so we have two little H gates, one that we put the black into and one that we put the white into.
+
+![image](https://github.com/user-attachments/assets/57747463-e4d1-4d16-b594-2066d58c74f5)
+
+
+And so now we know that the black one turns into the negative black over the white and the white one turns into black over white, and we have a superposition of those two choices.
+Now, what's interesting about this is that if I have, if I have a 50% chance of a 50% chance of either the top ones and a 50% chance of a 50% chance of the bottom ones, because these are all independent we can use that rule we learned before where we multiply the probabilities.
+And so 50%, ½ times ½ is ¼ so we can actually now say, “oh, well, we have four possibilities with equal probability.” Right?
+And so now when we look at those possibilities something very interesting happens, and this is what's so interesting about choosing the negative sign.
+It turns out that this negative sign wasn't just arbitrary, it turns out that mathematically we can actually add and subtract. And so I see a negative black and a positive black and those  actually cancel each other out.
+And we'll be learning the full mathematics for that later, but  in this case we're just doing it with the visual representation.
+And that's the rule, is that you have, if you have a negative and a positive of exactly the same within a superposition of equal probabilities then you can remove them.
+And so now we have the case where we have a 50-50 probability of measuring white or white.
+Well clearly, that's the same as 100% probability of measuring white.  
+
+![image](https://github.com/user-attachments/assets/060e3a8b-2e5a-4409-8852-1675770d5cb8)
+
+
+Okay, likewise, if we start with the black then we'll do the negative through, negative black through an H gate and then the white through an H gate.
+So we have now, which is interesting, we have a negative sign preceding the state. That's negative black over white.  
+And then we have the black over white from the white ball.
+Now this is also interesting, again. Because like algebra I can distribute the, multiply by the negative sign. 
+So what I'm going to do is I'm going to not only  say, “oh, these are all four equal probabilities,”  but before I do that I'm going to take the negative sign.
+And so the negative and negative on the black turn into a positive. But the negative is with the white.
+So now we have this situation, we have a negative white ball and a positive white ball which cancel out. And so now I'm left with 50-50 probability of a black or black, which is 100% probability of a black.
+So this is the math, the mathematics using the visual representation. And it's very powerful because with certain problems we can actually do quite sophisticated algorithms using only this visual representation and not needing to learn the matrix multiplication operations.
+But we will also be learning those in case you're taking this for required credit or are going for a certificate of any course, any kind. 
+
+![image](https://github.com/user-attachments/assets/f042f309-77de-49e4-ae66-8c8b714e786e)
+
+Alright, so, what did we learn? The H gate puts the qubit in superposition. We know that.  
+And then it's applied to a pure state of 0 or 1, and that results in a 50-50 chance.  
+But two H gates in sequence reverse each other, resulting in the original input, which seemed really counterintuitive and that's what really told us that there was more going on there and there must be more to the state than just simply probability of white and black.
+And so then we introduced the negative sign for phase and then I showed the calculation with the phase value that accurately models or predicts the reversing behavior. Thank you.
+
+
