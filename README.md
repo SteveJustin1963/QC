@@ -542,4 +542,78 @@ And then it's applied to a pure state of 0 or 1, and that results in a 50-50 cha
 But two H gates in sequence reverse each other, resulting in the original input, which seemed really counterintuitive and that's what really told us that there was more going on there and there must be more to the state than just simply probability of white and black.
 And so then we introduced the negative sign for phase and then I showed the calculation with the phase value that accurately models or predicts the reversing behavior. Thank you.
 
+# Working with Phase
 
+Okay, we just learned about a new attribute of quantum state called phase.
+And so I want to just talk a little bit about it. 
+
+![image](https://github.com/user-attachments/assets/f6140400-ad21-4a33-a4d5-202c2970fcd2)
+
+So, you might recall that in the superposition video we saw that if we put a black ball into the H gate, then we get a state that's 50-50 black versus white, but the black ball has a negative sign on it.
+So, we want to explore how that negative sign works. So, that's an indication of phase.
+
+![image](https://github.com/user-attachments/assets/0a2d48ee-0242-4f11-b04b-1ec12717f916)
+
+And we don't need superposition to have phase.
+So we actually have a Z gate, which I like to call the phase flip gate.
+And if you give it a white ball, then nothing happens.
+But if you give it a black ball, then it changes the phase of the black ball from positive to negative or from negative to positive.
+
+![image](https://github.com/user-attachments/assets/3dfbf6d8-d1c9-415e-aadd-d03d266c386b)
+
+
+All right. So, let's also look at a little bit, let's look at what would happen if we gave a NOT gate the superposition that was resulting from that H gate from the black ball.
+So, we're giving it as input a 50-50 chance of a black ball and white ball, with a negative sign.
+And so if we put this through the NOT gate, that would flip the color of each of the balls but retain the negative sign, because the NOT gate doesn't do anything to phase.
+And so, what we see is, we end up with a state that has the negative sign on the white ball.
+And there's nothing inherently wrong with that, except convention.
+And so negative phase is actually an attribute of the qubit as a whole. It's not associated with the white ball or black ball, but the convention is that we always put that negative sign on the black ball.
+So, once you've completed your operation, then there's an additional step that we sometimes have to do to fix the negative signs, to put them in the right place.
+And so, in this case, we would swap it from the white ball to the black ball.
+Because this is only talking about one qubit and it's really just saying that the phase is negative for this entire qubit. Even if this qubit measured a white, it still could measure, if we measured just for phase, we can't measure for phase and white and black at the same time.
+We would have to choose which measurement we're doing.
+And we've only in this course talked about measuring white and black.
+And that is actually all we're going to talk about, most of the time.
+But the point is that if we were instead to do a measurement about what the phase is, the fact that the phase is with the black or the white doesn't affect it. This is just about whether or not it's negative phase or positive phase. 
+
+![image](https://github.com/user-attachments/assets/b9c19353-2410-44a9-afa7-c4d9856426e5)
+
+
+Okay. Let's go one step further.
+We have the Z gate that you already saw and it ends with the black ball with the negative phase.
+Now let's imagine we were to put this through two NOT gates.
+We know from learning about NOT gates that whenever you put something through two NOT gates, you should get back your original state. That includes the phase.
+So, here we have our negative black ball at the end. So the question becomes, what should the state in the middle be?
+Specifically, the phase aspect of the state.
+Because we know that we should have a white ball that's not affected by the phase. And so the question is, should we have the phase negative sign here? 
+Because I just got through saying that the phase is, by convention, placed with the negative ball, which is the black ball.
+I just got through saying that the negative phase symbol is placed with the black ball and not the white ball.
+But here we have something that's 100% white ball, so there is no black ball aspect to the phase in the superposition.
+So, it is true that we need to have the negative sign or else if we put it through NOT, we know what a positive white ball is NOTed. It's a positive black ball. So we need to have the negative phase there.
+So, when there's no superposition it actually can be the case that you have to put a negative symbol on white ball.
+Because, as we recall, the negative phase is about the qubit itself and not just the white or the black.
+It's just convention as to where we put it, because that's where the mathematics works out for all of these operations. Especially when we get to two-bit operations soon. 
+
+![image](https://github.com/user-attachments/assets/794682bf-8c38-4c77-85c9-e6488888f9b5)
+
+
+All right. Now let's consider this last situation.
+We have a situation that has 25% chance of measuring black and a 75% chance of measuring white.
+Or a 1/4 chance of black and a 3/4 chance of white.
+And we put it through a NOT gate. Right. And then we get 1/4 chance of white and 3/4 chance of black.
+So let's look at what happens if this had been with phase.
+So, let's imagine that we started out with a negative phase.
+So, you can see the negative on the black ball. We put it through a NOT gate.
+That would end up with the negative sign on the white ball and three black balls with no negative phase. And we know that we're supposed to put the negative phase on the black ball.
+And the question is, do we do it on all black balls or just one black ball?
+And it turns out that we would do it on all black balls because if we were using those as inputs to later gates, we want the negative signs to all be there.
+Because all of our gates in quantum are set up assuming that the negative sign is going to be on the black ball. So there we go.
+So in summary, phase is associated with the entire qubit, not the zero or the one element.  
+
+![image](https://github.com/user-attachments/assets/bb2eec5e-1e0f-4804-8d2a-61541eb902eb)
+
+However, by convention, we place the negative sign with the one term.
+And if there is no one term, it'll go on the zero.
+And for the visual representation, if there's more than one black ball in a single qubit superposition state, we'll put the negative sign on all of the black balls.
+
+# 
