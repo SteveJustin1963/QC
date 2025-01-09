@@ -958,6 +958,9 @@ In this section, we introduce how to apply gates to single qubits using mathemat
 All right, so now we're going to get into how to calculate quantum operations using mathematics. 
 We've already seen the visual representation, and that's going to be adequate for the algorithms and examples we’re using in this course.
 But, in order to do general quantum computation, you need to do the mathematical calculations. So we're going to introduce that now.  
+
+![image](https://github.com/user-attachments/assets/23508865-31ea-43e1-8957-3e23245f47e2)
+
 All right, and before I introduce that I want to relate what we're doing to fractions. 
 Remember when you learn fractions - let's say we have this problem. You have a pie to share with three friends. You cut it in four equal pieces each with size one-fourth.
 Your friend exclaims, “Just because there are four of us it doesn't mean we need to eat the whole pie! I only want half that much.” 
@@ -967,6 +970,9 @@ We know that when we say “of” that means multiplication. And so we'll do a h
 We can always also check to see if we see if we were right. And when we cut these in half we see - ah yes - when we cut those in half there are now eight equal sized pieces. And so it must be one eighth. 
 Okay, so hopefully by this point in your life this makes sense. 
 But I'm sure that when you were in fourth grade - I can't be positive about this - but this is not as intuitive as one might think.
+
+ ![image](https://github.com/user-attachments/assets/0a5e6442-bce5-4602-995e-8d6c772fc60b)
+
 Because we have these - 1/4, 1/2, and the 1/8 - it's arbitrary as to the fact that we put the numerator on top and the denominator on the bottom.
 And furthermore: why is it that for multiplying we multiply both the numerator and denominator, but if we are adding we have to first make the denominators the same and then we add only the numerators? 
 These seem - if we don't have an understanding of how this works as a whole, then it just doesn't make sense.
@@ -977,6 +983,9 @@ And so it is often the case that, if you just look at the mathematics and what y
 We just have to trust that someone has figured out that this always works and we could go through all of the mathematical proofs that show that. 
 We're not going to in this class. We want to learn how to do these things, but certainly if you want to become someone who creates quantum algorithms you will also have to learn how to prove things.
 Because then you'll be doing things that no one can check and if no one can check them then you need to prove they're correct on the mathematics. But we're not going to be doing that in this class.
+
+![image](https://github.com/user-attachments/assets/9e66783d-7ba3-4d8e-8f54-03637fdae04d)
+
 Okay so let's look at addition and multiplication. Right. Just to emphasize how natural it is hopefully to us now  but how it really doesn't make sense.
 For example, when we're adding the same denominators we add the numerators but we make no change to the denominator.
 When we're adding with different denominators we have to first multiply the two denominators together if there's no greatest common factor. 
@@ -984,21 +993,33 @@ And then we multiply the opposite: we do ay + bx. All of this just seems counter
 Okay. And then for multiplication we just straight multiply the top two and multiply the bottom two. 
 We will see that matrix - if we look at what we're learning today - it has the strongest correlation with addition with different denominators in terms of the sort of complexity of the actual mathematics we're doing.
 Okay. So the whole point of this was just to point out that fraction multiplication is using the refraction addition even though multiplication of integers is actually harder than addition of integers.
+
+![image](https://github.com/user-attachments/assets/0c63872d-da81-4733-bbb2-4f76fc0faf63)
+
 All right. So what we want to learn is a mathematical calculation to calculate the not gain. Okay, and what do we have? 
 We have bra-ket notation; we have vector notation. Okay, and we already learned that the whole point of vector notation was to be able to do operations. 
 So it's going to be no surprise that we are going to use vector notation for this.
 Okay. And so we remember that in the general case it's a/b, and then and then the not operation flips it to b/a.
 Okay, so we want to figure out how this works, and we want to figure out how it works not only for a not gate but for any arbitrary gate. So for this we need to introduce a matrix. 
+
+![image](https://github.com/user-attachments/assets/a0861a11-7077-4826-ab49-935b8c5f2afc)
+
 A matrix is values laid out in a grid similar to a spreadsheet - a spreadsheet is a giant matrix. 
 So let's say I have a grid of numbers and these numbers happen to represent: Each row is a student and each column is an assignment. 
 And so, these numbers are not placed randomly. Their position in the row and column ties them to a specific student and assignment. And so this is how matrices work.
-And so we have the matrix symbol - notice that that's the same as the vector symbol. 
+ And so we have the matrix symbol - notice that that's the same as the vector symbol. 
 It's merely that the vectors are one dimensional. It's just a column, or you can write them in a row instead, but it's just a single line of numbers, whereas a matrix is a 2-dimensional grid. 
 And the other thing about the matrix is that we take off the labels so we just see the numbers.
 And if this were a spreadsheet, those labels would be just for humans, but for the computer it's just the numbers. 
 All right, so let's see how this relates to quantum. 
+
+![image](https://github.com/user-attachments/assets/7174020e-4447-490e-a65d-9933145756dc)
+
 In quantum every gate is represented as a matrix. Why? Because the mathematics works out. 
 Luckily, Einstein and others figured out the mathematics and we didn't have to. 
+
+![image](https://github.com/user-attachments/assets/32aa8e3c-7ef4-4a82-b553-c1dab8564794)
+
 All right, so let's look at how this works. To start out we need to learn an operation. 
 This is called matrix multiplication, and now you can see why I related it to the fractions because we have the sum of products.
 So we have a matrix and a vector. The width of the matrix needs to be identical to the height of the vector because what we do is:  
@@ -1011,6 +1032,9 @@ So I do the two multiplications and then I add up the result and I get a single 
 All right, so what are these? Well, the leftmost one is the quantum gate. 
 The matrix is the quantum gate, and then we have the initial value of the qubit in vector notation: the state of the qubit. 
 And then, when we calculate it, we will get the end state, the resulting qubit. And if we wanted we could put that back in  bra-ket notation if we find that easier to read. 
+
+![image](https://github.com/user-attachments/assets/ae7526a6-d495-4359-a249-12c984dd04f5)
+
 Let's try it with a not operation. So I start out with a one - a black ball - in my not. 
 So my initial vector is zero percent probability of a zero and one hundred percent of a one, and so that's a zero on top and a one on the bottom.
 And then I put in my not operator. I put it to the left, and so now I have these, and then I make my calculation. 
@@ -1019,24 +1043,36 @@ So 1 times 0 plus 0 times 1, and I get a 1 on top and a 0 on the bottom and that
 Likewise, we can take this initial vector with a 1 on top and a 0 on the bottom, take my same not operator and do the same operation, and I get the 0 on top and the 1 on the bottom. 
 Feel free to pause this; you can go through it yourself if you need more time.
 Then we get black as the result.
+
+![image](https://github.com/user-attachments/assets/90f12877-8324-4ecf-abcf-5198804235dc)
+
 All right, so now let's take something a little bit more complicated. 
 Let's take the case where I have a single white ball and three black balls, which is a quarter probability of the white and three quarters probability of the black.
 Which, when you take the square root of that is 1/2 and root(3)/2.
 Okay. I invite you to pause now, write out the matrix and the vector, and go ahead and try to figure out the result on your own, and then you can check your work and if you've got anything wrong then you can see the video.
 So, first we have to set it up correctly. We need to remember to put the not operator on the left and the initial vector on the right, and then we're ready to make our calculation. 
 So we remember to do each row separately and then we can calculate our values and we get root(3)/2 on top and 1/2 on the bottom.
+
+![image](https://github.com/user-attachments/assets/ce8103de-47eb-46e6-965c-bae996c9d201)
+
 All right, let's try the H operator. So once again we get our initial vectors. Again, I invite you to pause and try to do this yourself  now that you've been introduced to the H operator. 
 In fact, now if you look up on the internet the operator for a quantum gate, then you would be able to do any of the quantum operations.
 All right, so then we multiply this out. 
 And we have our expected results. And you see that that negative sign in the bottom right hand corner is what gives you  the negative sign when you're coming from a one from a black ball.
+
+![image](https://github.com/user-attachments/assets/80c16616-00f7-4939-9de2-490fbb37f244)
+
 We can do this again with the white ball, and what we'll notice is that the negative one gets multiplied with a zero, and that's why there's no negative sign when we start out with a zero ball.
 And I want to emphasize how important it is for you to try these on your own before watching, before just letting the video skate through.
 Because it's deceptively simple to watch mathematics go by on the screen and think that you could do it yourself but it's really important that you actually do it yourself so that you can check. “Can I do it myself?” 
 “Am I going to remember to put the vector and the operator in the right side? Am I going to remember how to do all these calculations?” 
 So make sure that you're doing at least some of these on your own just to try it.
+
+![image](https://github.com/user-attachments/assets/c416e067-4ead-4233-9c5a-635a030fd354)
+
 Okay, so what did we learn in this video? A matrix is a two dimensional grid of numbers in which position is important, it matters.
 It's used in many, many things, but in quantum it's used for qubit operations, and those operators are stored as their own unique matrix.
 So each operator has a matrix, and matrix multiplication is used to calculate the output of a quantum operation. 
 And today you learned how matrix multiplication works!
 
-
+# 
