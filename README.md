@@ -1323,4 +1323,76 @@ All right. So, then everything's the same as you've seen before. We have our vec
 Once again, we go across the top row to get the top item. We go across the second row to get the second item, third row to get the third item, and fourth row to get the fourth item.
 And it matches our answer from our visual representation.
 
+# Multi-qubit Operations with Superposition
+
+Okay. Now that we've seen how to do multiple qubit calculations, both visual and mathematical notation, now we need to see how we use multiple qubits with superposition for the operations and the calculations.
+
+![image](https://github.com/user-attachments/assets/dd5a5f97-ce89-466a-979b-68672191ba5c)
+
+All right. So, let's look at the visual representation. So, I have this qubit operation SWAP and I have a superposition input.  
+And we saw how to do superposition with single bits, we just split up that gate and put each individual bit and carry over the result in the same position on the left and the right.
+We just have an extra step here, we need to put this into two-qubit notation, visual representation. So, what does that mean?  
+That means that we need to express that, in this case, I have one bit that's 50-50 probability of black or white and a second bit that's always white.
+That means that in two-qubit notation, I have two choices: one that's black-white and another one that's white-white.
+And then, I get that from taking the first choice of the superposition and adding it to the second bit that's always white.
+And then, I have that line and then I have my other choice is that second choice from the first one. And again, my second ball always being white, so we can see here that the line indicates a separate choice.
+And so, now we have two balls in each choice, instead of just one. So, I have black-white and white-white. And again, order matters within these combinations.  
+It doesn't matter if I put white-white on top and black-white on the bottom, but it matters that black is on the top of white in that pair. 
+Okay. And so, once we've got that correct, that's the only extra step from what we did before. What we do is, we split the SWAP into two tiny SWAPs, and each of these pairs go through their own SWAP gate.
+
+![image](https://github.com/user-attachments/assets/fef59ab5-7132-400a-a41f-c52ff87c6023)
+
+So, I have my top pair black-white and those get swapped to white-black. And then I have my bottom pair white-white, and those get swapped, too. Well, not much swapping that happens with white-white, but that ends up with white-white.
+And so, now we can see that our result is two choices, again, but our first choice is white-black instead of black-white and our second choice is still white-white.
+
+![image](https://github.com/user-attachments/assets/d680d0a6-b341-488f-b885-a2085889be44)
+
+Okay. Now let's look at a second one. And this is our C-NOT, so this is when order really, really matters.
+But we're starting with the same inputs, so we go ahead and make ours where we take the first one and we split it into the two choices, and then we put the second one and that's the second choice both times.
+Now we split up our C-NOT gate into two little C-NOT gates, and we put the first one through. And because the top ball is black, that means we'll swap the color of the second ball.
+
+![image](https://github.com/user-attachments/assets/0c44c2e4-6409-4a02-bbf3-8a0791321c6e)
+
+And then we have our second C-NOT gate, and those are both white. Because the top one is white, the second one does not swap. And so we have a white.
+So, now we can see that our result is that either both balls are going to be black or both balls are going to be white.  
+Now, let's look at how we do these with calculations. So, we can see that we start out, these are the same two examples just done with the mathematics, as well.  
+
+![image](https://github.com/user-attachments/assets/d1ff50dc-f5c6-47ba-a228-4f9c06322717)
+
+So, we have our first two that were 1 over root 2 0 plus 1 over root 2 1. Right. That's the notation for a black and a white with the line in between that has a 50-50 chance of being black and white.  
+And then we have our white ball which is 100% chance of being a 0.  
+And so, now we put this into vector, well bra-ket notation first and then in vector notation. And there are really two ways you can do this.
+We can do this by doing our FOIL, our tensor product, and multiplying the terms in front of those two zeros, and then multiplying the terms in front of the top zero and the bottom one, and then the top one and the bottom zero, and then the both ones.
+The other way to do this is to do the visual representation like we did and then say, “Oh, I see in visual representation that I have a 50-50 probability of being a 1 0 or a 0 0." And we express that.
+Now of course, visual representation does not represent all possible bra-ket notation states, qubit states, and so it also does not express all possible two-bit qubit states.
+But if you have one of these states, that can be expressed in visual representation, you should feel free to go that direction, as well.
+So, now that I have this I can put down my initial vector.
+And this is when it's really useful to pull out the 1 over square root 2, because I don't need it inside while I'm doing my calculations, and my calculations will be a lot simpler if I use ones and zeros instead.
+So, having this one over square root of 2 outside that means that that's multiplied by all of those terms, and so that's when one over root 2 times one is 1 over root 2.
+So, I can do the 1 over root 2 calculation at the very end if I want to.
+All right. So, I have my swap operator and now I can do my calculation. We've already seen how to do calculations and it's no different when I have a superposition from when I don't. 
+Except that now I have a vector with two ones in it, so I can't do my little shortcut that I did before, looking for the same pattern. So, here I can see that when I do the red and the green, I get a 1 because the first term was the same.  
+And then I can see that in the orange row, the third terms are both 1, and so I have a 1 there, as well.
+But in the blue and the purple rows, the ones are in positions that have zeros in the initial vector. And so, those are zeros. So, we have our 1 1 0 0.
+And I have my one over root 2 before the vector to indicate that each of those terms is multiplied by one over root 2.
+So now, I can switch this back to bra-ket notation. And now, I multiply out that 1 over root 2 and so I can see that I have 1 over root 2 for 0 0 and 0 1.
+And I can do a little sanity check and I can see, oh yeah, my answer did have a 50% chance of being a 0 0 and a 50% chance of being a 0 1, so my calculation matches my visual representation.  
+Let's try this again with the C-NOT gate. So, once again I'm starting with the same state, and so the state of my initial vector is going to be the same.
+
+![image](https://github.com/user-attachments/assets/f4094fb4-e805-480d-b351-fcc91d130192)
+
+So, all of those calculations are the same, the only difference in this problem is my C-NOT operator.
+So, my C-NOT operator has a different vector or a different matrix, and so my answer is going to be different. So, let's look.
+So, we do, we again, the 1 is there for both the red row and the green vector. And now we notice that it's the last row that has a 1 in the third position, like the initial vector.
+So, we have a 1 on the first and the last position. So,  if we put this back into bra-ket notation that's easier for humans to read, we can see that our 1 over root 2 is in front of the 0 0 and the 1 1.  
+And we go back to our solution and we see that, oh yes, those do match.
+
+![image](https://github.com/user-attachments/assets/3bd7003e-22a2-4e73-a128-ce8ac1e91938)
+
+All right. So, we've seen how to perform multiple qubit operations with the inputs in superposition.  
+So, the first step is always to put the qubit state into multi-qubit notation, whether you're doing visual representation or the mathematical notation. And then, we calculate the result.
+So, for visual representations, we pass through each pair through its own gate and then put the results on the right hand side, right where they come out.  
+In matrix notation, actually, once you've got your multi-qubit notation in vector, then it's exactly the same as it was before.
+You do a matrix multiplication of the gate operation matrix and the qubit state vector. And then when you have that result vector, if you want, you can put it back in bra-ket notation, if that helps you understand the result better.
+
 # 
