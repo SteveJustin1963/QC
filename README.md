@@ -798,4 +798,113 @@ Okay. But what's really important is that measurement cannot detect the entire s
 Or if you go farther in quantum computation, you will see that there are other aspects of the state that you can measure, but you only get one measurement because once you get the, once the measurement happens, it collapses an aspect of the quantum state.
 And so you can't just continue as before, pretending that no measurement occurred.
 
+# Bits and Qubits: Bra-ket Notation
+
+So far, we’ve been working with visual representations of qubits and operations. In this section, we introduce two types of mathematical notation for quantum state. Using mathematical notation has two purposes. First, we can quickly glean what the probabilities are of measuring each possible outcome. Second, it allows us to easily calculate the results of quantum operations.
+
+Today we're going to introduce bra-ket notation. This is the mathematical notation for expressing the quantum state of one or more qubits. 
+
+![image](https://github.com/user-attachments/assets/0a5daab9-dc4c-400f-a7db-e60a0d17282a)
+
+Let's just take a look at the classical computer and decompose it. So, everything in a classical computer is stored as a number in a variable.
+So, each letter of the sentence has a number. For example, lower case s is 115 and capital is is 83. The color of the font is a number.
+The number of slides in the presentation. Every image in this presentation is stored as lots and lots of numbers and sounds from audio files are stored as numbers.
+So, everything that a computer does is based on numbers and so all of those numbers are in fact stored in binary.
+
+![image](https://github.com/user-attachments/assets/ac9fcfe5-e118-4c86-a06a-0ca96c015fe2)
+
+A binary digit holds a one or a zero at any given time. That binary digit is called a bit and eight bits is a byte.
+So, when you hear about the capacity of a hard drive or memory all of that is in eight bit chunks or a byte.
+And just for fun, four bits is a nibble but that's rarely used; bytes are what's used.
+What's nice is that programming languages typically hide these details, so even people who program for a living don't need to worry about bits or bytes.
+They just worry about numbers and often they can just worry about colors. You can say red and the language will have a number associated with red, but as a programmer you can just use the word red and so programmers can often ignore these details as a service from the programming language.
+
+![image](https://github.com/user-attachments/assets/9d48fe07-54ac-48d0-ba69-fa3b29e34037)
+
+However, the quantum computer we don't have that yet, we don't have programming languages that allow us to abstract away all these details. And when we do, they're heavily steeped in math.
+And so, we're going to start from bits. So, the classical bit is a zero or one. And the quantum bit, we've already been using this notation to try to get you used to it, and so the quantum bit is a zero or a one in that funky notation.
+And so, what that means is that the zero is in that ket is the probability of measuring zero. And the other one's the probability of measuring one, which is why we don't state it's just zero or one.
+It's actually related to the probability of measuring that. And then we know that the phase can either be positive or negative.
+In this course we're not going to cover anything other than positive or negative, and then the probabilities of measuring zero or one.  
+But there is one more aspect that you can do as bonus material, if you wish. Okay.
+
+ ![image](https://github.com/user-attachments/assets/18f90ae7-ae64-4e0f-975c-8379a3cf4985)
+
+So a classical variable is a group of bits. So, let's say you have 8 bits or 16 bits or 32 bits.  
+Typically machines like your desktop is going to be 64 bits for most variables, which is a lot of possible values. So, for every bit you add, you double the number of values you can store.
+And so, in a classical variable, in that 2^n variable, you can store a single one value at a time.  
+I can have 64 bits. That doesn't change how many values I can store at once, that changes how big of a single value I can store.
+So, instead of being limited between 0 and 232, well 0 to 232 minus 1, I can, if I have 64 bits, I can store all the way from 0 to 264 minus 1.
+Alright. So, likewise, quantum variables have grouped up these qubits, because if you just have, if you can only store a 0 or 1 that's not very useful in computing.
+And so, quantum computers also group groups of qubits to work cooperatively. And so, instead of storing a single value of 0 to 2n minus 1 it can actually store any number of those 2n possible values.
+But here's the kicker, that we saw before with measurement and superposition, is that we can only measure one of those values!
+And so what a quantum computer is doing is manipulating the probability of measuring each individual value.
+And so, I could be storing the numbers 8, 12, and 24 and maybe I want it to be 50% probability of measuring the value 8 and 25% probability of 12 and 25% probability of 24.
+So, that's what we're doing in quantum computing. So, this means if I set up uneven probabilities for measuring different values, I can use it to make my videos a little less certain.
+Maybe I would choose the next slide based on a quantum measurement and then I would press return and I would have no idea what I'm supposed to say next because I don't know what slide is kind of going to come up.
+
+![image](https://github.com/user-attachments/assets/3794d375-2e5b-4e73-8220-839b42b51bb9)
+
+Alright. So, let's look at how to show these in bra-ket notation.  
+So, what we've got is, we've got a ket, those funny symbols are called a ket, and so we have something in that ket.
+Which you've been seeing as a zero or one, but it could be anything. 
+And so I've got an apple and a banana here. So, I'm expressing the probability of finding an apple or a banana, let's imagine.
+So, we have what's called a probability amplitude. I don't directly store the probability and the reason is because we want a notation that makes it so that we can do the mathematical calculations easily.
+And while it is true that if I stored the probability straight that would make it for me, the human, reading it to say, “oh, I know what the probabilities are.”
+But it turns out that then I would have to do extra steps in order to do the mathematics for the operations.
+So, what we do is we store it in the numbers that make sense for the operations, and then we convert it when we want to know the probability.
+But it's not about calculation. So, let's look at this.  
+So, it turns out that if you square that a you'll get the probability of measuring an apple and if you square that b with the absolute value, you'll have the probability of measuring the banana.
+And it turns out that because we're not using the third aspect of state, we're only using positive and negative signs, and we're using the probability of measuring, we don't need that absolute value sign because squaring it will make the negative positive anyway.
+So, for the purposes right now for you, you can ignore the absolute value sign.
+But if you if you do get introduced to the third element of state, which is imaginary numbers, then we do need that, we do need the absolute value sign.
+Alright. So, here we have the probability amplitude and so this means that I can take the a and I square it to get the probability.
+And whatever is in that ket is the probability of is what that probability pertains to.
+Okay. So, don't get confused by the zeros and ones that are inside the ket, and the zeros and ones that are outside the ket, which is why we're doing this example with apples and bananas.
+Okay. So this b, if you square the b you get the probability of measuring whatever is in the ket next to it, which in this case is bananas.
+So, let's look at, oh and interestingly enough, not surprisingly, because we have only two choices here, right, we have to measure one or the other.
+So there needs to be 100% probability of one or the other
+And so, if you add up the probabilities, that's always 1 because 1 is 100%. And we're storing these as fractional probabilities between 0 and 1, so 1 indicates 100%.
+
+![image](https://github.com/user-attachments/assets/711a6235-f85c-4bca-bc20-fa6c8bfa1ccb)
+
+Alright. So, for quantum we know that we're measuring 0 or 1 so in the ket, we're always going to see a 0 or 1. And then we have the numbers in front of the ket.
+Okay. So, like we just saw, the a, if you square the a that's the probability of measuring the 0 and if we square the b that's the probability of measuring the 1.
+And just by convention, we always put the 0 on the left and we always put the 1 on the right. We wouldn't have to but we do because it's better to just be consistent because then everybody can read it more quickly.
+If I have to find the 0 and find the 1 and figure out which one's first or second, then that's going to make it slower. So we just always put the 0 first and we always put the 1 second.
+Alright. So, let's relate this to the balls. So now, we have, let's say our probability is just a 0; that means that we know we're going to measure a 0. That means the probability of measuring a 0 is 100% and the probability of measuring 1 is 0%. And the phase is positive.
+
+![image](https://github.com/user-attachments/assets/fa7a64fc-9ff6-4ce2-8bb8-fbccbf5c3120)
+
+So that would give us the state of a 1 in front of the 0 and a 0 in front of the 1. This is why I did it with apples and bananas first, you can see that because a lot of our states have a 1 or a 0 as the probability it is sometimes confusing to distinguish that from the 0 and 1 in the ket, which is what you would measure.
+Now let's look at the black ball. So, that is 100% chance of measuring a 1 and a 0% chance of measuring the 0.
+Go ahead and pause the video each time and see if you can predict what the bra-ket notation is going to be for each one of these. So, pause and then when you're ready go ahead and continue.
+Okay, let's try it now. We have a 0 in front of the 0 because there's a 0% probability of the 0 and we have a 1 in front of the 1.
+Alright. Now let's try superposition. So, I've got a 50-50 probability of 0 or 1. Okay. Alright. And then I also have a positive phase.  
+So what does that mean, 50% probability? We know, over here I know that if I square the number in front of my ket then I get the probability.
+But I'm being given the probability and I need to figure out what to put in front of the ket. So, what is the opposite operation to squaring?
+It's the square root. So, a 50-50 probability is ½ and so the square root of ½ is 1/√2 because the square root of 1 is 1. So, we can just put the 1/√2 in front of each one.
+Now let's look at if there's a negative sign. Okay. So, if there's a negative sign that means that my phase is negative and so we put that as a negative sign instead of a positive sign.
+
+![image](https://github.com/user-attachments/assets/6ab5af7c-a3bb-4907-8744-37cb5100d621)
+
+Alright, let's look at when we have more than just two states. Okay. So, remember this four state means that each one of those has equal probability. Which means that we have ¼ probability of measuring a 0 and ¾ probability of measuring a 1.
+Alright. So, how would we write this in bra-ket notation?  
+Okay. Well, we would have 1/√4. What's the √4? 2. So, we would have a ½ in front of the 0 and a √3/2 in front of the 1. But we've left it as square root for you so that you can see the calculations more easily.
+Alright. So, then we would square it to get the probability, which is why we get ¼ and ¾.
+
+![image](https://github.com/user-attachments/assets/767bbb4a-764d-4dbe-a4cb-4441855eba7b)
+
+Okay. So, I do want to show you a few shortcuts that people use with bra-ket notation, which again is very analogous to algebra. You saw that we used some of the algebra principles when we were doing the visual representation for calculating the H gate. So let's look at this.
+We have both conventions that some people believe improve readability and then we also simplify algebraic expressions. So, let's give a few examples.
+So, in algebra, if I have 0 times something then I just drop that term, right?
+And so, we have something analogous in quantum. So, if I have a term, in this case it's 100% probability of measuring a 0 and 0% chance of measuring the 1, well there's no point in even having the 1 there so we take that out.
+And then we drop the 1 in front of the 0 because it's 100% probability. That's the only one. So, we've been using this the whole time.
+So, if you just see a 0 inside of a ket, that means 100% probability of 0 and 0% probability of 1. Okay.
+Alright. So, another convention is to factor out equivalent constants. And I will tell you that I don't do this when we're in bra-ket notation.
+There are other times I do, we're about to see vector notation, but I don't use it with bra-ket notation. But other people do.
+So, sometimes you'll see something that's 0 + 1 and you might think, “wait, that doesn't make sense! I was told that a^2 + b^2 must equal 1. And in this case what you're seeing is a and b are both 1, a^2 + b^2 would be 2.”
+So, when there aren't any things preceding the kets, that means they're equal probability. And so, that in this case that would be 50-50 probability, which you know is 1/√2.
+We're never going to use that in this class because I think that this is actually confusing, and so I will never use it. But I want you to know about it in case you ever see it, so it doesn't throw you off.
+
 # 
