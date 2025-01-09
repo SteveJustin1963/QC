@@ -616,4 +616,81 @@ However, by convention, we place the negative sign with the one term.
 And if there is no one term, it'll go on the zero.
 And for the visual representation, if there's more than one black ball in a single qubit superposition state, we'll put the negative sign on all of the black balls.
 
+# Probability basics
+Because qubits can exist in superposition, the outcomes of quantum operations can be probabilistic. Therefore, this section begins with an overview of calculations involving probabilities. We also discuss the important fact that measurement “collapses” the state of a qubit in superposition. Just like measuring the strength of a vase by using a hammer destroys the vase, measuring the state of a quantum bit can also modify its value.
+
+![image](https://github.com/user-attachments/assets/84a8da73-7218-4032-96d0-36fcd1d7f604)
+
+Hello! I'm just going to give you a really short introduction to probability. We only need a little bit of it for quantum computing but we want to make sure we understand it correctly.
+So let's just look at a popular example of probabilities: You get a prediction about the weather.
+When I look at my phone I might see this in the morning. For each time of the day, it gives me a probability that it will rain. And so what we want to explore is what does that really mean.
+What does the probability of rain at any one moment really mean?
+
+![image](https://github.com/user-attachments/assets/2519baea-0054-4bc1-b14e-89aa8cc9fef7)
+
+So let's see. Does it mean it's going to rain at 11 p.m. because at 11 p.m. it's at 6%?
+Or does does it mean that it's not going to rain at 11 p.m.? Or perhaps that it is going to rain at 4 a.m.? Or does it just mean that it's more likely to rain at 8 a.m. it is to rain at 8 p.m.?
+It is not a valid conclusion that it is not going to rain at 11 p.m. It still could rain at 11 p.m.
+The probability wasn't zero. In addition, we don't know that it's going to rain at 4 a.m. It only has a 40% chance of raining, so it might rain but it might not.
+Now, is it more likely to rain at 8 a.m. than 8 p.m.? Why yes! It is in fact more likely to rain at 8 a.m. than 8 p.m. But notice: being more likely still doesn't mean it's going to happen, so this prediction doesn't actually tell us whether or not it will rain on Sunday.
+
+![image](https://github.com/user-attachments/assets/906b51ea-ced0-4fc8-9109-314972d3d15f)
+
+So then we have to ask ourselves: What does this information give us? Well, what it says is that given our limited information, because we don't know everything, we don't understand well enough how weather works, if we know what it's like right now we're not perfect at predicting what
+it's going to be like later. So given our limited information, if we experienced a hundred thousand, a million, a billion, an infinite number of days with these identical conditions then we could predict. If it were 100,000 days with identical conditions to now, approximately
+40,000 of them would have rain at 4 a.m. So i don't know if this particular Sunday will have rain, I just know that less often than half of the time when I have conditions like this, I get rained on at 4 a.m.
+Okay, so when we think about probability let's first think about things that probability is not. Probability is not actually predicting that something is definitely going to happen or not happen for an individual action. Okay, unless it's at 100% or 0%.
+So if I have a 75% probability of something happening, that means I don't know it's going to happen. However, what I do know is that if I were to repeat this trial, this test, if the test has a 75% probability of having a certain outcome, that if I try it many, many times then 75% of those will have that outcome.
+
+
+Likewise, I can't tell whether a prediction, a probability, was correct by the outcome of a single one. If I say that it it has 99% probability of something happening, so there's a 99% probability of rain at 10 am and then there isn't rain, does that mean that my probability was wrong? Well, no. This could have been the 1 in 100 that didn't have rain.
+So we can't tell whether a probability is accurate by just looking at a single trial. We actually would have to do many, many, many identical trials or experiments and see the outcomes of many, many of them to see if our probability was correct. This is very important for quantum because quantum has outcomes that are probabilistic. And so that means that most of the time we don't know exactly what the quantum outcome is going to be that particular time. We can only tell after many, many times.
+So, there's a second really important thing about probability for quantum computing which is that if I have two independent events with their own independent probability, I need to be able to calculate the probability of both events happening, both events not happening, the first event happening but the second event not, or the first event not happening and the second event happening. So I need to be able to take the probabilities associated with independent events and combine them to be a probability of certain combinations of those multiple events.
+So let's take this as an example. Let's imagine that there's a 50% probability of rain this afternoon and unfortunately there's only a 25% chance probability that I will remember to bring my raincoat, because that's just the way I am. So the question is: What is the probability that it will both rain and I will forget my raincoat?
+So first we're going to reason this out with sort of a visual representation and then I'll show you how to calculate it only with mathematics.
+
+![image](https://github.com/user-attachments/assets/65b7113e-de5c-4517-9db6-a1aaf497f676)
+
+So, we can set this out so I have I only have a 25% chance of remembering my raincoat, which is a 1 in 4 chance. So 3 out of 4 chances, 3 out of 4 times, I will forget my raincoat and I'll just have this nice shirt on. And then for rain and shine it's 50-50, so I have equal probability of each one.
+So these are the independent probabilities and this is a way of visualizing these independent probabilities. So if we were to say, well, what about raining and jacket? So we could combine these by saying, well, I could have sun and in the case that I have sun I have all of these chances. Right, 3 chances for a shirt and 1 chance for my raincoat.
+
+![image](https://github.com/user-attachments/assets/6906de2e-17a4-4165-8eea-cffe600435d1)
+
+
+
+
+Same with raining. So I can picture it this way, where the first 4 are all in the sun and the second 4 are all with rain. So what I end up having is 8 equally likely, non-unique scenarios, 4 of which are sunny, 4 of which are rainy and 3/4 of which have me in my shirt and
+
+
+![image](https://github.com/user-attachments/assets/b0d1c064-8262-44aa-a299-5cc65088344d)
+
+
+1/4 of which have me in a raincoat. So I can look at this. I say, oh, 3 of these scenarios have me getting wet, in the rain with no raincoat. So out of the 8 total scenarios, 3 of them were the ones I was hoping not to encounter. So that's 3 out of 8 or 37.5% probability.
+
+![image](https://github.com/user-attachments/assets/ff66ae47-08ed-4436-9aa0-6157e2e594ba)
+
+The way you calculate this with mathematics is that you use the original probabilities, 0.75 or 0.25 and then 0.5 and 0.5, and you lay out all four possible combinations. And you just multiply the probability of one happening with the other. So, the probability of a shirt is 75% and a probability of rain is 50%, so I multiply 0.75 times 0.5 and I get 37.5%.
+And I can look at this for all four combinations. So there are four unique combinations and if I add up all my percentages I could just check to make sure I'm right. Or to have one sanity check is just to check to make sure everything adds up to 100%.
+And it does. And in fact, all the things with the sun add up to 50%, all of the things with the cloud add up to 50%, everything with the raincoat adds up to 25%, and everything with the shirt adds up to 75%. So that's a way that I can double check my math.
+So just long story short: if you want to find the probability of two events happening, if you have the probability of each one of the independent events you just multiply those probabilities together.
+So how is probability used in quantum computing? Well, each qubit in superposition has a probability of being measured 0 or 1. That's a single independent probability. It turns out, though, to do any useful computation you need to use multiple qubits. And so, once we combine individual qubits to be multiple qubits working together, that putting them together we multiply each combination of outcomes by multiplying the probabilities. And then once we have them in those multi-cubit probabilities, then we can do multi-cubit operations and calculate the outcomes.
+I would like to conclude with a few random thoughts. Or, more accurately, some thoughts about the word random.
+So, now that you've seen probability and different ways to look at it, I want to introduce this fact that "random" is used differently at different times.
+
+
+![image](https://github.com/user-attachments/assets/316f88d8-0ee0-4f1e-a7eb-9dff5aad0b00)
+
+
+
+For example, "That was such a random comment!" That means that it was unpredictable to me, right? Because whoever made the comment didn't necessarily think it was unpredictable. They thought of it.
+But when you use that word, random, in that context, you're just meaning that you would never have thought of that, that was so unexpected to you. So, random can just sometimes mean unexpected, which could mean unpredictable, which means very low probability.
+We could also say, "Draw a number at random!" or "Pick a number at random." That means each number has equal probability of being drawn or chosen. So, sometimes random means low probability or "I didn't expect that" and sometimes it means equal probability.
+In quantum, when physicist talk about random, they might say something like, "Quantum measurements have random outcomes." It does not mean what it meant in the previous two.
+What it means is what we've been seeing. that there's a probability, a known probability, of the outcome. The outcome of a single measurement is not guaranteed. It is indeterminate or nondeterministic.
+
+
+
+
 # 
+
+
