@@ -1,36 +1,101 @@
  
 
 # QC
-
-
  
-# Introduction to Quantum Computing for Everyone
+# Course Welcome
+Welcome!
 
-# UChicagoX QUAN12000
+This course will introduce you to the key principles of quantum computing. We will use two key methods to build this knowledge: intuition and math. First, you'll explore the unique features of quantum computing through relatable activities. Then, we'll provide you with the mathematical background to be able to calculate the results of quantum operations.
 
-# Goals
+f transcript. Skip to the end.
+Hello and welcome to Introduction to Quantum Computing for Everyone.
+Quantum information science is an exciting field that draws from information theory, computer science, and quantum mechanics to process information in fundamentally new ways.
+Quantum mechanics emerged in the 1920s to describe certain puzzling behaviors of elementary constituents of matter and light.
+It revolutionized physics and chemistry and led to the inventions like transistors, lasers, and GPS.
+Subsequently, we came to understand that information itself can be acquired, encoded, and manipulated in quantum systems, giving birth to the new field of quantum information science.
+Quantum information scientists draw on the work of physicists, computer scientists, and mathematicians as well as materials scientists, chemists, and engineers.
+Cross-disciplinary teams are applying QIS to new quantum technologies in communications, networking, data security, navigation, and medical diagnostics.
+They are also making headway in developing quantum computing systems that may allow us to tackle challenges previously out of reach in areas such as cryptography, logistics, optimization, and across the natural sciences.
+As with many emerging technologies, QIS will likely affect how we live and work and may lead to new developments in broader aspects of society such as commerce, governance, privacy, employment, and education.
+This evolution contrasts that with that of classical computing, which was a particular solution for a particular problem: How can we make an automated calculator?
+As a result, classical computers were designed to mimic the operations that you and I do every day.
+We can learn how to program a computer by assuming that it holds information, performs mathematical operations, and can make decisions based on the information it has.
+All programs are created with those same building blocks and they largely match the way you and I perform operations ourselves.
+The advances made since the 60s have been in four areas:
+making faster hardware,
+optimizing hardware based on frequent software operations,
+redesigning software based on the strengths and weaknesses of the technology,
+and making larger and faster storage.
+And throughout these advances, the programming approaches have also been improved.
+But everything still largely mimics human tasks.
+The differences between classical and quantum computing start from those very fundamental building blocks.
+Instead of building something that mimics a calculator, scientists discovered something interesting: powerful quantum phenomena.
+And then they discovered they could perform computation with it.
+So then they asked: how can we use these to perform computation better, faster or bigger than this automatic calculator we made?
+Quantum computing is fundamentally different in the ways that it stores information and operates on that information.
+In this course, we're going to cover the fundamentals of quantum computing.
+We'll answer such questions as: How are quantum computing and classical computing different?
+What is a quantum operation? What kinds of problems will quantum computers solve that classical computers cannot?
+How does quantum computing leverage phenomena from quantum mechanics? How does this give quantum computers an advantage?
+Are bits and qubits the same thing? And if not, how are they different?
+So this course will first introduce you to quantum applications and what the hardware looks like.
+Then we'll gradually build your knowledge of quantum computing in general.
+We'll start with an intuitive introduction to a quantum mechanics phenomenon and the quantum operations that exploit that phenomenon.
+Next we'll introduce you to the quantum notation that we use to communicate those concepts.
+Finally, we'll go through the mathematical calculations related to that concept.
+Don't worry, only basic algebra is required for this course. We'll teach you the rest!
+And the idea is that on each subject we progress from ideas related to everyday understandings and gradually build up to the more technical content. If you're not taking this for credit then you can sort of restart every time we have a new concept.
+And this course segment will end with an algorithm that illustrates the power of quantum computing.
+This course is the first of a two-course sequence. In the next course we will build skills from operations to circuits to algorithms, explore quantum computing concepts via quantum programming.
+We'll learn quiskit, IBM software for their current quantum computer, and build up the mathematical skills necessary for understanding more complex algorithms.
 
+# Course Summary
+Quantum mechanics emerged in the 1920s to describe certain puzzling behaviors of elementary constituents of matter and light. It revolutionized physics and chemistry and led to inventions like the transistor, lasers, and GPS. In time, we came to understand that information itself can be acquired, encoded, and manipulated in quantum systems, giving birth to the new field of quantum information science (QIS). QIS studies how information science relates to quantum mechanical effects, and the field is highly multidisciplinary. In QIS, the work of physicists, computer scientists, mathematicians, materials scientists, chemists, and engineers comes together to tackle challenges in areas such as cryptography, logistics, optimization, and across the natural sciences. Notably, QIS can be applied to solve computing problems previously assumed to be out of reach without massive amounts of resources or compute time.
+
+QIS in the form of quantum computing is projected to become a revolutionary computational model. A quantum computer encodes information and operates on information in a fundamentally different manner than implemented in a classical computer such as a laptop or supercomputer. These differences in the computational model may allow a quantum computer to solve some types of problems at a much faster rate than ever demonstrated before. In this course, the principles of quantum computing will be introduced in an intuitive manner. Supporting mathematics needed to understand quantum operations will be introduced on an as-needed basis. The only prerequisites are a basic understanding of algebra as well as the desire to learn more about an emerging and disruptive technology. 
+
+This course will proceed as follows. First, we introduce you to quantum applications and what the hardware looks like. Then, we will gradually build your knowledge of quantum computing. In general, we’ll start with an intuitive introduction to a quantum mechanics phenomenon, followed by quantum operations that exploit that phenomenon. Next, we will introduce the quantum notation that we use to communicate those concepts. Finally, we’ll go through the mathematical calculations related to that concept. By the end of this course, you will have enough understanding to examine a well-known quantum algorithm, the Bernstein-Vazirani algorithm. 
+
+After finishing this course, you will be able to answer the following questions:
+```
+How are quantum computers and classical computers different?
+How does quantum computing leverage phenomena from quantum mechanics? How does this give quantum computers an advantage? 
+What is a quantum operation and circuit?
+What is entanglement?
+What kind of problems will quantum computer algorithms solve that are challenging for classical computers?
+```
+# Pre-course Survey
+This survey will help your instructors understand your prior knowledge about quantum computers and quantum information science. We don't expect you to know all the answers!! If you did, you probably wouldn't be taking this course. Please answer each question to the best of your ability.
+
+# Syllabus
+```
+Introduction to Quantum Computing for Everyone
+UChicagoX QUAN12000
+Goals
+```
 Welcome! In this course, we delve into the interdisciplinary endeavor of quantum computing, with a focus on developing intuition about the major benefits and limits that are imposed on quantum computing by the quantum phenomena as well as getting comfortable with how basic quantum operations behave. The specific goals of the course are:
-
+```
 Learn the intuition behind the quantum mechanics principles that affect quantum computing.
 Learn basic quantum computing operations
 Learn the mathematics necessary to calculate quantum operations
 Learn how individual quantum operations are combined to create higher-level operations and algorithms
 As a virtual course, most of the content will be included as videos followed by individual questions to practice / check understanding. In each section, there will be a larger homework assignment that tests the understanding of all videos of the section. 
+```
 
-# Resources
+### Resources
 Textbooks that might be useful:
 
-# Recommended: 
-Q is for Quantum, Terry Rudolph
-Dancing with Qubits, Robert S. Sutor
-Course Pacing and Access to Assignments
+### Recommended: 
+- Q is for Quantum, Terry Rudolph
+- Dancing with Qubits, Robert S. Sutor
+
+### Course Pacing and Access to Assignments
 This is a self-paced course. Please note that access to graded problems is only available to those enrolled for the verified certificate.
 
-# Grading / Assignments
+### Grading / Assignments
 For those enrolled in the Verified track, each student’s final grade will be computed according to the following:
 
-```
+``` 
 Practice questions following videos: 20%
 Homework problems for each section: 35% 
 Exam: 45%
@@ -39,11 +104,9 @@ Your lowest 2 scores on the practice questions will be dropped.
 An overall grade of 70% or higher will be considered a passing grade. 
 ```
 
-# Section Overview
-
-Quantum information science (QIS) is useful for a small set of very compelling applications, some of which we will introduce in this section. Then we’ll introduce some current quantum computing hardware and take a historical perspective on the development of quantum computing. Quantum operations occur at a qubit level. Unlike classical computing, there are not yet programming languages that allow programmers to abstract away critical details of quantum operations without needing to understand them. In this section, we will introduce operations on a single qubit.
 
 # Quantum Computing: Introduction and Applications
+Quantum information science (QIS) is useful for a small set of very compelling applications, some of which we will introduce in this section. Then we’ll introduce some current quantum computing hardware and take a historical perspective on the development of quantum computing. Quantum operations occur at a qubit level. Unlike classical computing, there are not yet programming languages that allow programmers to abstract away critical details of quantum operations without needing to understand them. In this section, we will introduce operations on a single qubit.
 
 There's been a lot of excitement surrounding quantum computing, so in this video we're going to provide a little bit of an introduction as well as describe some applications that quantum computers are proposed to be really good at.
 
@@ -157,28 +220,35 @@ Returning to the example of the trip from home to work, we can see how the numbe
 
 By the time we reach 7 stops, there are more than FIVE THOUSAND options to consider. Which is best? How would you know? 
 
-The decision of what makes one path the ‘best’ as compared to the rest is often made with respect to reducing a cost such as number of required resources for the trip or total time taken for the journey. For example, in their routing problem, UPS optimizes routes for minimal left turns rather than shortest route.
+The decision of what makes one path the ‘best’ as compared to the rest is often made with respect to reducing a cost such as number of required resources for the trip or total time taken for the journey. 
+For example, in their routing problem, UPS optimizes routes for minimal left turns rather than shortest route.  
 
-
-# Practice Questions due Jan 11, 2025 02:45 AEDT
-Visit the website that hosts a simulation of the Traveling Salesman Problem that optimizes for the shortest path. Pick a map and complete the simulation at least twice, once with 10 stops and once with 30 stops. For each simulation, take note of the length of the optimal tour, length of your tour, and calculation time (how long it took the computer to find the optimal route). Afterwards, feel free to continue experimenting with the simulator by varying the number of included cities each time.
+https://theconversation.com/why-ups-drivers-dont-turn-left-and-you-probably-shouldnt-either-71432
 
 https://algorithms.discrete.ma.tum.de/graph-games/tsp-game/index_en.html
 
+
+# Travelling Salesperson Simulation
+Practice Questions due Jan 11, 2025 02:45 AEDT
+Visit the website that hosts a simulation of the Traveling Salesman Problem that optimizes for the shortest path. Pick a map and complete the simulation at least twice, once with 10 stops and once with 30 stops. For each simulation, take note of the length of the optimal tour, length of your tour, and calculation time (how long it took the computer to find the optimal route). Afterwards, feel free to continue experimenting with the simulator by varying the number of included cities each time.
+
+https://algorithms.discrete.ma.tum.de/graph-games/tsp-game/index_en.html
+```
 Travelling Salesperson Simulation
 Yes	No
 Were you always able to find the optimal route?
+```
 
-
-Audit Learners: Travelling Salesperson Simulation
-
+# Audit Learners: Travelling Salesperson Simulation
 Visit the website that hosts a simulation of the Traveling Salesman Problem that optimizes for the shortest path. Pick a map and complete the simulation at least twice, once with 10 stops and once with 30 stops. For each simulation, take note of the length of the optimal tour, length of your tour, and calculation time (how long it took the computer to find the optimal route). Afterwards, feel free to continue experimenting with the simulator by varying the number of included cities each time.
 
+https://www-m9.ma.tum.de/games/tsp-game/index_en.html
 
 Consider the following questions: 
 
 Were you always able to find the optimum route? 
 As the number of cities on the route increased, how did the amount of time it took the computer to find the optimal route change? 
+
 
 # Connection to Quantum Computing
 
@@ -261,7 +331,7 @@ These just show a few of the examples of technologies being used to implement qu
 
 # A Historical Perspective 
 
- Start of transcript. Skip to the end.
+ 
 Hello! Today, before we dive into quantum operations, I want to give you a little bit of a historical perspective.
 It gives you insight into why we're teaching you to code in quantum computing much differently from how one would normally go about learning to code in a classical computing environment. So let's look at the development of classical computers.
 Classical computers were designed to mimic human operations. Calculations, in fact.
@@ -375,16 +445,16 @@ But in the second one we can see that now the control is black, and so we will t
 Okay, so I just want you to be aware that when you're looking at a c-not it is not always the case that the control is on top and the target is on the bottom. You always have to look for that symbol.
  
 
-- Audit_QOps1_practice_questions.pdf
-- Audit_Intro_to_QC_and_QOps_1_Homework.pdf
-
-
+- [Audit_QOps1_practice_questions.pdf](https://github.com/SteveJustin1963/QC/blob/main/Audit_QOps1_practice_questions.pdf)
+- [Audit_Intro_to_QC_and_QOps_1_Homework.pdf](https://github.com/SteveJustin1963/QC/blob/main/Audit_Intro_to_QC_and_QOps_1_Homework.pdf)
 
 
 # Quantum Operations: Part 2 / Section Overview
 In this section, we continue learning about operations and introduce a physical concept critical to quantum computing: superposition. Qubits in superposition don't just have one value or another - they have two values at once, with a probability of reading one or the other when you measure the qubit. We’ll also talk about another attribute that is important for quantum computation: phase.
 
 # Introduction to the H Gate
+In this section, we continue learning about operations and introduce a physical concept critical to quantum computing: superposition. Qubits in superposition don't just have one value or another - they have two values at once, with a probability of reading one or the other when you measure the qubit. We’ll also talk about another attribute that is important for quantum computation: phase.
+
 
 ![image](https://github.com/user-attachments/assets/15f5b757-281f-4aa1-9f01-608556b13ffb)
 
@@ -468,6 +538,7 @@ It means there was something we were missing about the state; somehow, the state
 So, what we've figured out is that in the H gate, the states are not identical between the black and the white, but they are 50/50 probability of being measured a black or white.
 And what we know: that for random, it's also 50/50 probability of measuring black or white. But even when we go through the random again, it ends up with a 50/50 probability of black or white. So that's what's different in our observations. We'll have to see mathematically what that would mean.
 
+[https://github.com/SteveJustin1963/QC/blob/main/audit_H_Gate_Intro.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_H_Gate_Intro.pdf)
 
 # VIsual Representation of Superposition
 
@@ -616,6 +687,10 @@ However, by convention, we place the negative sign with the one term.
 And if there is no one term, it'll go on the zero.
 And for the visual representation, if there's more than one black ball in a single qubit superposition state, we'll put the negative sign on all of the black balls.
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_Visual_Superposition.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_Visual_Superposition.pdf)
+
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_QOps2_homework.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_QOps2_homework.pdf)
+
 # Probability basics
 Because qubits can exist in superposition, the outcomes of quantum operations can be probabilistic. Therefore, this section begins with an overview of calculations involving probabilities. We also discuss the important fact that measurement “collapses” the state of a qubit in superposition. Just like measuring the strength of a vase by using a hammer destroys the vase, measuring the state of a quantum bit can also modify its value.
 
@@ -657,15 +732,9 @@ So these are the independent probabilities and this is a way of visualizing thes
 ![image](https://github.com/user-attachments/assets/6906de2e-17a4-4165-8eea-cffe600435d1)
 
 
-
-
-Same with raining. So I can picture it this way, where the first 4 are all in the sun and the second 4 are all with rain. So what I end up having is 8 equally likely, non-unique scenarios, 4 of which are sunny, 4 of which are rainy and 3/4 of which have me in my shirt and
-
-
 ![image](https://github.com/user-attachments/assets/b0d1c064-8262-44aa-a299-5cc65088344d)
 
-
-1/4 of which have me in a raincoat. So I can look at this. I say, oh, 3 of these scenarios have me getting wet, in the rain with no raincoat. So out of the 8 total scenarios, 3 of them were the ones I was hoping not to encounter. So that's 3 out of 8 or 37.5% probability.
+Same with raining. So I can picture it this way, where the first 4 are all in the sun and the second 4 are all with rain. So what I end up having is 8 equally likely, non-unique scenarios, 4 of which are sunny, 4 of which are rainy and 3/4 of which have me in my shirt and 1/4 of which have me in a raincoat. So I can look at this. I say, oh, 3 of these scenarios have me getting wet, in the rain with no raincoat. So out of the 8 total scenarios, 3 of them were the ones I was hoping not to encounter. So that's 3 out of 8 or 37.5% probability.
 
 ![image](https://github.com/user-attachments/assets/ff66ae47-08ed-4436-9aa0-6157e2e594ba)
 
@@ -688,6 +757,7 @@ We could also say, "Draw a number at random!" or "Pick a number at random." That
 In quantum, when physicist talk about random, they might say something like, "Quantum measurements have random outcomes." It does not mean what it meant in the previous two.
 What it means is what we've been seeing. that there's a probability, a known probability, of the outcome. The outcome of a single measurement is not guaranteed. It is indeterminate or nondeterministic.
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/Audit_Probability_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/Audit_Probability_PQ.pdf)
 
 
 
@@ -798,6 +868,10 @@ Okay. But what's really important is that measurement cannot detect the entire s
 Or if you go farther in quantum computation, you will see that there are other aspects of the state that you can measure, but you only get one measurement because once you get the, once the measurement happens, it collapses an aspect of the quantum state.
 And so you can't just continue as before, pretending that no measurement occurred.
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_SuperpositionMeasurement_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_SuperpositionMeasurement_PQ.pdf)
+
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_Prob_Superposition_Measurement_HW.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_Prob_Superposition_Measurement_HW.pdf)
+
 # Bits and Qubits: Bra-ket Notation
 
 So far, we’ve been working with visual representations of qubits and operations. In this section, we introduce two types of mathematical notation for quantum state. Using mathematical notation has two purposes. First, we can quickly glean what the probabilities are of measuring each possible outcome. Second, it allows us to easily calculate the results of quantum operations.
@@ -907,6 +981,11 @@ So, sometimes you'll see something that's 0 + 1 and you might think, “wait, th
 So, when there aren't any things preceding the kets, that means they're equal probability. And so, that in this case that would be 50-50 probability, which you know is 1/√2.
 We're never going to use that in this class because I think that this is actually confusing, and so I will never use it. But I want you to know about it in case you ever see it, so it doesn't throw you off.
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_bra-ket_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_bra-ket_PQ.pdf)
+
+
+
+
 # Vector Notation
 
 Okay, now I'm going to introduce you to a second notation. It's called vector notation. 
@@ -950,6 +1029,9 @@ I just take it out of the brackets. Okay, so this we will be seeing in this clas
 What I didn't like about that simplification in bra-ket notation was, though, that the 1/root(2) disappeared entirely, and I don't like that.
 So in this case we just pull out the 1/root(2), which can make it a lot easier because the numbers get really small and drawing that root(2) sign gets really small.
 And so it can be much more legible to have to pull out the 1/root(2) and then to have one and one inside.
+
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_vector_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_vector_PQ.pdf)
+
 
 # Single Qubit Matrix Multiplication
 
@@ -1074,6 +1156,13 @@ Okay, so what did we learn in this video? A matrix is a two dimensional grid of 
 It's used in many, many things, but in quantum it's used for qubit operations, and those operators are stored as their own unique matrix.
 So each operator has a matrix, and matrix multiplication is used to calculate the output of a quantum operation. 
 And today you learned how matrix multiplication works!
+
+[https://github.com/SteveJustin1963/QC/blob/main/audit_Single_Qubit_Matrix_Multiplication_practice_questions.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_Single_Qubit_Matrix_Multiplication_practice_questions.pdf)
+
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_Notation___Single_Qubit_HW.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_Notation___Single_Qubit_HW.pdf)
+
+
+
 
 # Quantum Fun: Entanglement
 
@@ -1226,6 +1315,11 @@ And those two limitations based on measurement are: That any measurement provide
 I've changed the state, and so now not only would I not get all of my information, once I measure it at all then I lose a big piece of that qubit. 
 And so we have to be very careful about measurement, which means we can't use measurement very often, and measurement is really important in computing.
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_Entanglement_Intro_practice_questions.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_Entanglement_Intro_practice_questions.pdf)
+
+
+
+
 # Multi-qubit Operations with Math
 
 All right. Now we're ready to see how to calculate multiple qubit calculations.  
@@ -1323,6 +1417,10 @@ All right. So, then everything's the same as you've seen before. We have our vec
 Once again, we go across the top row to get the top item. We go across the second row to get the second item, third row to get the third item, and fourth row to get the fourth item.
 And it matches our answer from our visual representation.
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_multiqubits_calculations_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_multiqubits_calculations_PQ.pdf)
+
+
+
 # Multi-qubit Operations with Superposition
 
 Okay. Now that we've seen how to do multiple qubit calculations, both visual and mathematical notation, now we need to see how we use multiple qubits with superposition for the operations and the calculations.
@@ -1395,4 +1493,37 @@ So, for visual representations, we pass through each pair through its own gate a
 In matrix notation, actually, once you've got your multi-qubit notation in vector, then it's exactly the same as it was before.
 You do a matrix multiplication of the gate operation matrix and the qubit state vector. And then when you have that result vector, if you want, you can put it back in bra-ket notation, if that helps you understand the result better.
 
-# 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_multiqubits_superposition_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_multiqubits_superposition_PQ.pdf)
+
+
+
+# Entanglement Circuit with Math
+
+All right. Now we're ready for the entanglement circuit. We're going to do it two ways: visual representation and mathematically. 
+So, our goal is to entangle two qubits, and recall that there are many different ways you can entangle but today we're going to do the same entanglement circuit.
+So, the same entangle circuit takes all white balls and produces all balls that have a 50-50 chance of being measured black or white.  
+But they do have a relationship, and that relationship is that if you take pairs of those, those pairs will always have the same measurement. 
+And this is because the first measurement determines the value and the other pair now has been changed to match it. And that's what entanglement does.
+So, remember that measurement is the action that determines whether something is black or white.
+All right. So, let's see how this works. The entanglement circuit is very simple, it's merely an H block that puts the control bit in superposition before moving on to the target.  
+So, we have a white target but we have our H gate that receives the white and spits out a black or white. Okay. And so we need to figure out what happens when the control is not simply a zero or a one pure state.
+Well, let's calculate it. We're going to calculate it, like I said, two ways: one visual and one mathematically. And I would like to invite you to actually pause the video now and try it. You can try it with the visual representation and then you can try it mathematically.
+All right. So, let's look at it with the visual representation. We know that when we go through the H gate, we get black-white superposition. Now we need to put this into two-bit representation.  
+So, we take the black and the white and that becomes the first ball of each pair. It's very important, remember, in a C-NOT that the control be the first in each pair.
+And then our target ball is not in superposition, so that's going to be a white ball as the second of each pair.
+So, we have two choices and each is a pair of qubits. Our next step is to take this C-NOT and replicate it and pretend we have two different C-NOTs  occurring on each of these two pairs of bits.
+So, in the first C-NOT we can see that the control is black, which means that I'm going to toggle the state of my target. So, I have black-black. 
+In my second C-NOT, my control is white, which means I'll make no change, which means we get the white-white.
+So, now we can see that we have a 50-50 probability of getting each of these two pairs of results. One is both measuring black and one is both measuring white.
+And the way we could figure out that this is entangled is to find that there are no individual states of bits that, if you do the tensor product to multiply it out, to figure out what it looks like in multi-bit state, it could never look like this. So, that's how we know we have entanglement.
+All right. Let's try this again with mathematics. So, we know that when a white ball goes into superposition it becomes equal probability of black or white, with a positive phase.
+So, 1 over root 2 |0> plus 1 over root 2 |1>. Okay. Or the vector above.  
+Okay. So, then we put this in superposition state and so that is equal probabilities of |0 0> or |1 0> because again we always put the control bit first with no probability of getting a |0 1> or a |1 1>. 
+So, now we calculate this using matrix multiply.
+Okay. So, we bring our vector down and we move that 1 over root 2 to the left because it's a multiplicative factor and so we'll multiply it out after we do our calculation.
+So, we have our C-NOT gate and now our multiplication is simple, because it's just ones and zeros.
+So, we see that instead of having 1 0 1 0 we end up with 1 0 0 1. Because if you look at the third row and fourth row, when you do the sum of products with our vector column that's what we get.  
+And then if we put this back out into our multi-bit bra-ket notation we can see that that means that the 1 over root 2 is on the term |0 0> and the term |1 1>, and so that corresponds to a 50-50 probability of those outcomes.  
+Which is two white balls or two black balls. And it doesn't matter that in my previous calculation the black balls ended up on top and the white balls on the bottom because, when we do the horizontal lines, it doesn't matter the order in which we do the different choices.  
+What matters is the order within the pair, not between the pairs.
+
