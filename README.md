@@ -907,4 +907,48 @@ So, sometimes you'll see something that's 0 + 1 and you might think, “wait, th
 So, when there aren't any things preceding the kets, that means they're equal probability. And so, that in this case that would be 50-50 probability, which you know is 1/√2.
 We're never going to use that in this class because I think that this is actually confusing, and so I will never use it. But I want you to know about it in case you ever see it, so it doesn't throw you off.
 
+# Vector Notation
+
+Okay, now I'm going to introduce you to a second notation. It's called vector notation. 
+
+![image](https://github.com/user-attachments/assets/1dea1749-13d2-4e9f-a79b-b6ec64f3ae20)
+
+We did bra-ket notation already and this made it easy for us to extract the probability of measuring each possible state and knowing the phase.
+Okay, so just a reminder that the probability of measuring zero in this case is |a|^2 and probability of measuring one is |b|^2. Okay. Now let's look at vector notation.
+
+![image](https://github.com/user-attachments/assets/75804302-4912-4633-b702-730e996273ec)
+
+Vector notation, you might think is no different, but it turns out that vector notation is really important for making the calculation of gate operations.
+So we're going to store it as a vector. What is a vector? 
+A vector is just a way of storing a list of numbers - of depicting the storage of a list of numbers.
+So we can see - we have sort of a long bracket here. I make it as tall as I need to hold as many as I want.
+Well, we will always be holding - for a single qubit we'll be holding two because there are two possible states with a single qubit.
+So I just make the brackets up here tall enough to store these two values. 
+And so I always put the probability amplitude for the zero on top and for the one on the bottom. 
+So the the only confusing thing that I find with this is that the the reason the bra-ket was so nice was because I had the zero in the ket and the one in the ket and so I knew that a was the square root of the probability of measuring zero and b was the square root of the probability of measuring one.
+But in this case, though, it could be positive or negative.
+But with the vector notation we lose that visual reminder of where the position is for the amplitude corresponding with zero and where the position is with the amplitude measuring one.
+So you're just going to have to remember that zero is always on top and one is always on the bottom and in fact when we get to having more it's just always in increasing order as you go down.
+So zero is the smaller number - it comes on top - and so just think of it as smallest to largest from the top to the bottom.
+
+![image](https://github.com/user-attachments/assets/2404c5be-74b2-41e2-b653-311d55fe8e4a)
+
+All right. So if I had others - this is also why it's really important that when you do it in bra-ket notation you always put the zero on the left and you always put the one on the right.
+So again, I've got the a at the top and the b on the bottom so if I were to do 1/root(2), I would put one 1/root(2) on top and one 1/root(2) on the bottom.
+Now, these are equal probabilities, so it turned out that the order didn't matter, but normally it does.
+Okay. All right, so then we have this example. This example is the one-fourth three-fourths, right?
+The square root of 4 is actually 2. So I have the 1/2 on top and root(3)/2  is on the bottom.
+So if I were to do something which I shouldn't be doing which is putting the 1 on the left and the 0 on the right then I would have to make sure, well, now it goes in vector notation in the opposite order.
+We don't want to do that, but I just wanted to illustrate that it's not just that the one on the left is always going on the top.
+It’s the one associated with the probability amplitude associated with zero and the probability amplitude for one.
+
+![image](https://github.com/user-attachments/assets/b05adf11-4060-4031-8aee-501c237e9a25)
+
+Okay. All right, so we also have algebra-like simplification for vector notations, and these ones we will do.
+So remember this bra-ket notation. So if I have 1/root(2) and 1/root(2), I can factor out this 1/root(2), but I don't remove it.
+I just take it out of the brackets. Okay, so this we will be seeing in this class. 
+What I didn't like about that simplification in bra-ket notation was, though, that the 1/root(2) disappeared entirely, and I don't like that.
+So in this case we just pull out the 1/root(2), which can make it a lot easier because the numbers get really small and drawing that root(2) sign gets really small.
+And so it can be much more legible to have to pull out the 1/root(2) and then to have one and one inside.
+
 # 
