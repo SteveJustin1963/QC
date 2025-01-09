@@ -691,6 +691,111 @@ What it means is what we've been seeing. that there's a probability, a known pro
 
 
 
+# Measurement and Superposition
+
+of transcript. Skip to the end.
+This time, we're going to take a lot closer look at two concepts that we've been touching on: superposition and measurement.
+I'm going to start out by having analogies to daily life and what we know about superposition and measurement in daily life, and then we'll look at how this is applied to quantum, what we've seen before and some new phenomenon because this is the key to how quantum operations are more powerful than classical operations, along with one that we haven't introduced yet called entanglement.
+So, superposition, measurement, and entanglement are going to be both the power and the limitations behind quantum computing.
+Okay. Let's consider measurement. And when I say measurement, we need to realize that this actually consists of three things.
+
+![image](https://github.com/user-attachments/assets/019b0947-f498-4d71-becc-95c76d6c60fc)
+
+One is a question we're trying to answer. Another is a device, some sort of measurement device. And a method by which we use this measurement device.
+So for example, if my question is, “What is the table length?” then my measurement device is the tape measure and my method is to pull that tape measure along the length of the table and read out the number at the end.
+Okay. So we're all used to measurement, there are lots of measurements that occur in our daily lives. Let's look at another one.
+
+![image](https://github.com/user-attachments/assets/b8ef7ac8-b647-4662-a3a2-e609c9566596)
+
+
+My question is, “How is this baby feeling?” and my measurement device is my own eyes and ears.
+Alright. So, my method is, I'm going to look for smile, frown, tears and I'm going to listen for laughs, silence, or screams.
+Okay. And let's think about how accurate this measurement method is and device. So if I see a smiling baby and I don't hear anything, then that could be happy, excited, or proud.
+I don't know exactly what that baby is feeling. And now, if I see, if I hear crying and I see tears and a frown, well that could be several things, as well: hungry, frustrated, tired.
+You know, my child used to cry and we couldn't figure out why. We'd ask her if she was hungry and she would say no.
+And then if you could just get the banana to touch her tongue, all of a sudden she would just consume the banana and she would be back to her happy self.
+So, measurement devices with babies and small children are just not accurate. Okay.
+Alright, so what we want to understand from this is that some measurements give only partial information and this is going to be key for quantum.
+
+![image](https://github.com/user-attachments/assets/3aa5edc3-cee2-4dc0-ae7e-2439adafc0ef)
+
+Alright, how about another one? So, how long can  you hold your breath?
+Now, our measurement device is going to be a stopwatch and our method is going to be to use a stopwatch to time how long you can hold your breath.  
+Alright. And let's think about how accurate this is. Well, what's interesting about this is that you might think it's accurate the first time, but if you do it immediately afterwards your time is likely to be lower and lower and lower and lower.
+And so why is that? If the measurement device were accurate and the method, wouldn't that mean that we should get the same result every time?
+This has a second phenomenon, which is that some measurements affect the item being measured. If I hold my breath for 30 seconds or 45 seconds or however long I can, now I am short of oxygen.
+That measurement process, it wasn't the device that did it but the method of holding my breath for the measurement changed me in the sense that now I have less oxygen in my system and now after this I cannot hold my breath as long.
+So, we have two very important aspects for measurement that we've seen which is that sometimes measurement doesn't reveal the full state and the second is that measurement can perturb the state.
+
+![image](https://github.com/user-attachments/assets/6a2c8d66-ee44-4274-9803-c9ff6fa8d814)
+
+So, let's look back at our H gate that we learned about.  
+We know that when we come out of the H gate, we have a certain state. Then we can measure this state.
+And so, I just want to point out, we've been seeing this the whole time, but I just want to point out the fact that this measurement only revealed part of the state.
+And the other thing it does is, it collapses the superposition and so now the state is either black or white ball.
+It's not just that I measured black or white ball, it is that the state now goes back to being 100% probability of subsequent measurements measuring the black or the white.
+It's not the case that I can measure it once,  “oh, I got black this time. I'll measure it again. Oh, I got white,” and then keep measuring it and in the end maintain a 50% chance of measuring white or black upon the first measurement.
+Now, further measurements will be always that same value unless I put it through another H gate or another gate that puts it in superposition. Okay. So both of these are very important.
+
+![image](https://github.com/user-attachments/assets/66cde187-7bef-4964-9a6a-466a98805d3b)
+
+Alright. So, now let's look at superposition. So, there are superpositions in our daily lives.  
+If I look at this picture, some people might see a duck, some people might see a rabbit.
+Okay. We have this famous one is that two faces or a vase.
+And then is this a young woman looking back behind us with a tiny nose and eyelash or is this an old woman where the cheek and chin of the young woman is actually just the nose of the old woman and her mouth is near the bottom of the picture?
+So, these are all, these could be considered superpositions because it's a single image with multiple pictures in it.
+And we don't want it just viewed as something that is two things, it's that it has two values potentially and the observer chooses at any moment in time which one they're seeing.
+But this isn't like quantum in that when I observe it, it changes it. Right. It's still, I can observe it. I see it as a vase. I look a little differently, “oh, I see the two faces now. Oh, I see the vase.”
+So, this does not, the observation or measurement does not disturb the state at all. Okay. Let's consider another one. Let's look at this word.
+
+![image](https://github.com/user-attachments/assets/3d9a66bc-88aa-47e4-860d-2d71a1c5e5b7)
+
+How do we pronounce this word? Hmm. I don't know.  Is it something you can use to make things shine on your floor or your furniture? Or is this something related to the country Poland?
+Okay. So let's think. The word alone is ambiguous. If I just put that word there, there's no way for you to know. So, what is your measurement device? Well.
+
+![image](https://github.com/user-attachments/assets/6953d6ee-7a46-49b0-9aee-eb1f4559202e)
+
+We can measure this to resolve the superposition. Right. So, I need a device and a method. My device can be my ear. So if someone said it aloud, my ear would tell whether they said polish or Polish.
+Or, if I'm reading it, I can read the words around it for context. Right. So, polish makes the floor shine or Polish sausage is delicious.
+
+![image](https://github.com/user-attachments/assets/bdd35145-8d52-4c69-9602-c97ff3131152)
+
+Alright. So, let's look at this again. And so, if we look at our H gate, we already saw the calculation that if we put a ball through the H gate twice and measure it, then we get out the same as we put in.
+And we saw all those calculations. Okay. So, now we're going to introduce something interesting. What happens if we measure in the beginning?
+
+![image](https://github.com/user-attachments/assets/88e7febf-a8d3-42c8-93de-3a263cac7076)
+
+Okay. So, let me just show more carefully what happens if  we don't measure. Right? So, if we don't measure, then we get out the black ball and the white ball.
+But we had a superposition in the middle and the superposition was the output of the first H gate and the subsequent input of the second H gate.
+
+![image](https://github.com/user-attachments/assets/c2c6ef36-0f81-4e72-b0d1-c01abb177dd5)
+
+What would happen if we measured in the middle, and then we put it through the gate, and then we measured? What would happen?
+So, go ahead and pause the video and think about what you think is going to happen on the output based on this measurement.
+Alright. So, you're ready to move on. Okay. Let's look at it. So, we start with this H gate and we know that when we go through the first H gate we have this superposition.
+
+![image](https://github.com/user-attachments/assets/02ef0587-46b3-4855-b8d4-37a339627e87)
+
+But this measurement collapses it into black or white, and so now I have either black or white going into an H gate.
+So, now what I get out. If it's a black ball, then I'm going to get a negative black on the top and a white on the bottom.
+And if it's a white ball, I'm going to get a black on the top and white on the bottom.
+So, I've made the negative sign gray because the  negative sign may or may not be there. Right.
+The negative sign is based on the outcome of the first measurement.
+However, what we do know from this is that, regardless of the phase, the measurement for this has a 50-50 probability of black or white.
+This is very different from what happened when we didn't measure in between.  
+And so this just shows you the profound effect that measurement has on quantum gates.
+So, if we have the measurement in between these two H gates, we have an unpredictable outcome.  
+Whereas when we didn't have a measurement at the in between, there was a predictable outcome.
+
+![image](https://github.com/user-attachments/assets/2be07553-b9c1-4d1a-9a3e-f3102a890c3f)
+
+Alright. So, let's just make sure we're on the same page here. So, quantum superposition has two values, right? Zero or one.
+And a part of the quantum state is the probability of measuring zero or one. We've been seeing this for a while now.
+But the probability is, is a measurement, it's not of the state, it's the probability of a measurement detecting it.
+And that probability gets manipulated through quantum operations. That's what quantum operations are for.
+Their job is to manipulate those probabilities and the other  parts of the state, like phase, because that also impacts future operations.
+Okay. But what's really important is that measurement cannot detect the entire state, it only detects a zero or one.
+Or if you go farther in quantum computation, you will see that there are other aspects of the state that you can measure, but you only get one measurement because once you get the, once the measurement happens, it collapses an aspect of the quantum state.
+And so you can't just continue as before, pretending that no measurement occurred.
+
 # 
-
-
