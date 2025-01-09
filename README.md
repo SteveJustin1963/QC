@@ -1226,4 +1226,101 @@ And those two limitations based on measurement are: That any measurement provide
 I've changed the state, and so now not only would I not get all of my information, once I measure it at all then I lose a big piece of that qubit. 
 And so we have to be very careful about measurement, which means we can't use measurement very often, and measurement is really important in computing.
 
+# Multi-qubit Operations with Math
+
+All right. Now we're ready to see how to calculate multiple qubit calculations.  
+
+![image](https://github.com/user-attachments/assets/a160148f-74f0-475e-ab91-a0adf3af9056)
+
+We already did this in the visual representation but now we need to learn how to do it with the mathematics, because the visual representation is limited in how many states it can express.
+So, let's look at these examples and look at the process.
+So, the process is going to be, in the first step we need to express the input as a two qubit combination instead of a single. So, we'll see how to do that.
+And then we want to calculate the results of the qubit operation, which is actually no more difficult in the matrix multiplication than it was for a one qubit operation. It's the same process just a larger matrix and vector.  
+
+![image](https://github.com/user-attachments/assets/be23d1b0-af30-4316-a1cc-04ef05e578b2)
+
+All right, so let's, the first thing we need to do is figure out how to express two independent qubits as a two qubit state, and this is very similar to the examples we saw before with probability.
+So, with probability you may recall we had a scenario, we had 75% chance of forgetting our raincoat and 25% chance of remembering it, and then a 50-50 chance of rain or sun.
+So, in order to calculate the probabilities of each pair of combinations we multiplied the probabilities of each individual one.
+This is the same process for quantum computing. So, if I have, so let's look at it for the weather.
+
+![image](https://github.com/user-attachments/assets/8fc2e2c6-f9d7-40eb-8d36-c600d78aeffb)
+
+So, we, for quantum we would express this as, not the actual probability, but the square root of the probability and so we would have root 3 over 2 and 1/2 for the probability amplitude of forgetting or remembering my raincoat.  
+And then I have 1 over square root 2 probability amplitude of sun or rain.
+Okay. So, this is like algebra: first outside inside last. And so, we take these and we take the first two, which are forgetting my raincoat and sunny, and then the outside are forgetting my raincoat and raining.
+And then inside is remembering my raincoat and it's sunny.  
+The last one is remembering my raincoat and it's raining. And so, we can calculate these probabilities by taking the product.
+And it also works with the probability amplitude, so we can take the probability, the product, by multiplying the probability amplitudes. And that will also be correct.
+So, we multiply these and this is what's going to get our resulting probability amplitude for the combination of the two choices.  
+And in QIS this is called the tensor product, but you can think of it as going back to your algebra and just multiplying first outside inside last.  
+
+![image](https://github.com/user-attachments/assets/86003969-d687-42d9-81b3-8ed349e0e62f)
+
+Okay. So, let's look at it for qubits. So, I have two independent qubits that are not entangled, so those would be a and b and then c and d. And then in qubit notation, I just multiply.
+I multiply a and c for the probability amplitude of 0 0, a and d for the probability amplitude of 0 and 1, b and c for the probability amplitude of 1 and 0, and b and d for the probability amplitude of 1 and 1.
+And remember that order matters here. And so we take the qubit on the left and that one's going to be first in each of the pairs, and then we have our second qubit that's on the right.
+So, this is the tensor product. Okay. So, let's take an example. Let's imagine we're doing this SWAP operation, which we already know how to do with visual representation, so it's nice to have it there to check our work.
+
+![image](https://github.com/user-attachments/assets/65c0aa7d-eadc-4af6-b5b4-0133aa04196e)
+
+So, the first thing we need to do is put it into our qubit notation. So, we have these two and in one-qubit notation the black ball has a 100% chance of being a 1 and a 0% percent percent chance of being a 0, and the the white ball has a 100% chance of being a 0 and a 0% chance of being a 1.
+So, we can see the qubit there for the one-qubit notation. And then we do our multiplication and we end up with only a 1 in a single place, all the other ones are multiplying by 0.
+And this is not surprising, actually, we have a 100% chance of measuring a 1 0 because the first one is always a 1 and the second one is always a 0.
+So, our calculation, we can do a little sanity check and check it with what's going into the left hand of our SWAP gate.
+All right, so, we apply the SWAP gate by doing a matrix, but first we need to put this in vector notation. So, as we recall from vector notation, we look at the number in front of each of these terms and this is when order really, really matters.
+So, I have to have ordered these in increasing order 0 0, 0 1, 1 0, 1 1. And then I rotate that and put them vertically in the vector, and now I'm all ready to do my calculation.  
+So, now that we've put it in two-bit vector notation, now I can go and actually calculate it.  
+
+![image](https://github.com/user-attachments/assets/ab93187f-5e3c-41fb-a066-5f027f5b38fe)
+
+Okay. So, let's do another example to practice putting something into two-qubit notation.
+So, you have your first qubit and your second qubit.  And I urge you to pause the video at this point and try to do this on your own and then restart the video and we'll do it together.  
+Okay, so we take these and we do our multiplication, first outside inside last.  
+And so, we have 1/2 times 0, 1/2 times 1, root 3 over 2 times zero, and root 3 over 2 times 1. And so, we end up with two of the terms being 0 and so we end up with what you see there.
+And this makes sense because you can see that our second qubit can't be a 0. So, that means that anything with a second qubit of 0, right most qubit being 0, in this case would be 0.  
+All right. So now, we're ready to put it in vector notation.
+So, we have these. So, we put them in the correct order, we rotate, and we put it in the vector. Now we're ready to do calculations.
+
+![image](https://github.com/user-attachments/assets/a211e91c-823e-42e0-8782-8d5ccf3e372f)
+
+Okay. So, let's try the two-bit calculation. So, we've already figured out what the initial vector is for this example. We did it in a previous slide.
+And now we take the matrix of the SWAP operation, and you'll notice that because these are two bit inputs we have four choices, so our matrix is a four by four matrix and our vector is four long. But the process is just the same.
+So, our result vector comes from doing the row and the red row and the green arrow sum of products, and then the orange, and then the blue, and then the purple.
+So, it is exactly the same process. You always take the row and the corresponding row with the initial vector, and we do sum of products.
+We take each pair, we multiply it. And so you'll see here, because there are so few ones and almost everything is zero, then almost all of the results are zero.
+And in fact, the only one in this case that's non-zero is the row that corresponds with the same pattern as the vector.
+So, you can see that that orange row and the green vector are both 0 0 1 0 and that's how we got a 1 out of it.
+But all of the other ones have a 0 in one or both positions, resulting in a 0 for the sum of products.
+Okay. So, we've got 0 1 0 0 and if we write this out in two-bit bra-ket notation then you can see we have a 0 on 0 0, a 1 on 0 1, 0 on 1 0, and 0 on 1 1.
+Which gets us only a single term because remember in bra-ket notation we are allowed to drop terms with a zero in front of them. But we're never allowed to in vector notation, so we're left with a single term which is a 0 1.
+And if we look back up at our vector notation, we'll see that that corresponds perfectly. The SWAP, in fact, starts with a 1 0 and ends up with the 0 1.
+
+![image](https://github.com/user-attachments/assets/e6859baf-866e-4193-815e-1c85228954e1)
+
+All right. So, here's another example we already figured out the input vector and so we're going to do the calculation.  
+I encourage you to pause the video and try it yourself and then I'll go through it.
+Okay, so you're ready to try it, we know we have the initial vector and then we have the SWAP operator, and we continue just as we did last time.  
+So, our result vector is calculated by going across with the red and down with the green, then across with the orange and down with the green, across with the blue, and across with the purple.
+Now, because this is a problem with all zeros and only one 1 per row and column, we can actually see again that our pattern is 0 1 0 0 in the initial vector, and that pattern we see in the blue row 0 1 0 0.
+And that's why that one resulted in a 1 and all the others resulted in a 0.
+Now, that intuitive way of looking at it only ever works if you have all zeros in all rows and columns, except for a single position that has a 1 in each one.  
+All right. So, then we can put these back out in bra-ket notation, and that results in a 1 0. And so, if we put that back into our visual representation, we see that it matches. So, it matches what we got the visual representation.
+
+![image](https://github.com/user-attachments/assets/eed901b1-7843-4889-8bad-c6bc9546d4fa)
+
+Okay. Let me do one last example. And this is important because for the C-NOT gate these are not symmetric. With a SWAP, it doesn't matter which is the bottom or the top, the values SWAP positions.  
+But for a C-NOT gate, one's a control and one's a target. And so, this affects the matrix multiplication operation that occurs. 
+So, if I have this scenario where we know from our visual representation we've got our top qubit is the control qubit and the bottom qubit is the target, for this case. You can draw it the other way but we've tried to be consistent about control being the top and  target being the bottom.
+The control is black so that swaps the value of the bottom.
+Now, what's important here is that regardless of whether the control is depicted on the top or the bottom, control always has to be qubit 1.  
+So, here, the control bit is black and so that's 100% probability of measuring 1. And the target is white, which is 100% probability of measuring a 0. So, we put this into two-qubit representation.
+And we can see here that the control qubit is that left most qubit of each of these pairs. So, that's what's really, really important, is that the control bit has to end up on the left when you put them into two-qubit notation.
+
+![image](https://github.com/user-attachments/assets/5139cff5-08b2-49c1-b0e4-5ccf4b7ae5ed)
+
+All right. So, then everything's the same as you've seen before. We have our vector and then we put our initial vector down, we use our C-NOT operator, and we perform our matrix multiplication.
+Once again, we go across the top row to get the top item. We go across the second row to get the second item, third row to get the third item, and fourth row to get the fourth item.
+And it matches our answer from our visual representation.
+
 # 
