@@ -1075,4 +1075,155 @@ It's used in many, many things, but in quantum it's used for qubit operations, a
 So each operator has a matrix, and matrix multiplication is used to calculate the output of a quantum operation. 
 And today you learned how matrix multiplication works!
 
+# Quantum Fun: Entanglement
+
+One reason that quantum computers can be more powerful than classical computers is what happens when you use multiple qubits. In this section, we introduce entanglement, a new quantum property that we don’t totally understand and that does not have an intuitive example in everyday life. But like magnetism and gravity, we can use it before we understand it. We also introduce how to calculate multi-qubit operations using mathematics - which is actually no different from calculating single qubit operations! We will also use math to determine whether two qubits are entangled - if it's impossible to accurately express the combined two-qubit state as two individual qubits, then they are entangled.
+
+How do we know what we know? The age-old question. 
+Throughout human history, it's like this. A story in three parts: observation, use, explanation.
+
+Our friend Carl the Caveman has just discovered fire. He observes that it is hot and keeps his cave cozy and warm.
+He uses it to cook his dinner. And eventually science catches up to him to explain it.
+A more interesting question, though, could be: How do we know what we know when the force at work is invisible?
+When Sir Isaac Newton discovered gravity, it hit him on the head.  
+
+He observed that when an apple falls from a tree it always falls down and that rivers always flow downstream. However, he didn't quite discover it.
+Farmers already used the force and predictable directionality of the river to power a water mill.
+The earliest water mills were in the 3rd century BCE, in Byzantia and China's Han dynasty.
+Newton provided mathematical equations to model gravity's effects and that gravity wasn't just confined to Earth.
+
+Even so, we don't know the explanation of it, why or how it works. But this doesn't stop us from using it.
+This is what it's like when answering the question  of, What is quantum entanglement?
+Scientists observe that when applied to two qubits, qubits are the basic unit of quantum information, quantum operations make their outcomes dependent. They entangle.  
+Scientists use this characteristic to have multi-qubit numbers cooperate when in superposition.
+
+And superposition is a state where the qubit can be in multiple states, just until it's measured.
+Or transport a quantum state over a long distance, because the entangled qubits have this not yet understood connection with each other that continues even at a distance.
+Scientists can model and predict the math associated with this phenomenon but don't know why it happens.
+
+However, the potential for quantum entanglement and teleportation of information is just being tapped into.
+Luckily, we don't need to understand why or how it works in order to use entanglement.  
+All we need is to be able to predict its effects accurately.
+
+# Entanglement
+
+Now we're ready for the last major quantum computing concept: quantum entanglement.
+
+![image](https://github.com/user-attachments/assets/02673efd-fe35-4e6e-b7c6-7f6f314828a9)
+
+Let's think about this from a historical perspective. 
+Let's consider fire, and we're going to consider a few other physical phenomena in our world that have transformed our lives from figuring out how to harness them. 
+And so when we think about fire we start with observations. It's hot when I touch it and it's hot when I'm near it. 
+So we know that fire is associated with heat, and so it has some uses. 
+Warmth is the obvious one, but then the less obvious ones are that water goes away with heat, that water evaporates.
+And so that was something to figure out, even if you don't understand why the wet clothing becomes dry even if it's placed a good distance from the fire.
+And then cooking food: once again, not obvious, but when someone figured out figured that you could do that you could do it. 
+Now, we can have all of those uses while not understanding at all how fire does these things. 
+The point is that you can observe a phenomenon, figure out ways to utilize that phenomenon without understanding it. Of course, now we do understand fire. 
+Warmth - radiation - is carried by invisible particles that carry the heat to you. Also, conduction can carry the heat through  visible particles, especially metal. 
+And then convection: as molecules heat up, they expand, causing them to travel. 
+So we have these different ways that the heat is transmitted, but we didn't need to understand that to figure out some uses.
+However, understanding that provides us even more uses because now we have detailed information about how to use it.
+
+![image](https://github.com/user-attachments/assets/dd77314a-ce9e-453d-ae54-3467f188e112)
+
+Okay. Magnetism is also similar. So we know that some metal objects rotate and turn north.
+We know that some metal objects are attracted to other metal objects, or the magnets attract metal objects. 
+And we know that now, because they rotate and turn north, we can use a compass. And now we understand the Earth has a magnetic field. 
+And magnets and magnetism are hugely useful: they're used in radios; they're used in any speaker device.
+And so these more sophisticated uses are really based on understanding them to a very high degree, but we can still use them with a very rudimentary understanding. 
+
+![image](https://github.com/user-attachments/assets/c7819a4b-f3e2-4d49-8c0a-d4f54e717e5b)
+
+Finally, gravity. We can stick to the ground, things stick to the ground, things fall to the ground, and rivers flow downwards. 
+So gravity, from this perspective, was understood for hundreds of years, right. 
+We can use a water mill; those are thousands of years old. 
+We can dam rivers - even beavers understand that - and Native Americans used to drive buffaloes off of cliffs and then use them for meat. They use lots of parts of the buffalo. 
+It wasn't until Newton that we understood about celestial objects that, well, if this happens when an apple is this close to the ground, what does that mean about the planets that are in the sky? 
+And then being able to figure out the equations for gravity is what has allowed us to put up long distance space probes that use gravity to slingshot around a planet and gain momentum and go in a different direction.
+And so, as we learn more about a phenomenon, we certainly can use it much better. But even if we don't understand it, we're able to use it, and so that's really where we are with entanglement. 
+
+![image](https://github.com/user-attachments/assets/49d0d0f6-2d82-47f2-87b9-c2156cfba682)
+
+Entanglement is observed. 
+So there exist quantum operations that, when applied to two qubits, make their outcomes dependent. Okay, and we'll see the uses of it today, but we don't know why.
+We can model - we figured out the mathematics for it, and so we can predict it and we can use it, but we still don't understand why. 
+Just like we don't actually understand why two planets are attracted to each other. 
+Why is that? Why are two physically remote masses attracted to each other? 
+I don't know - why is there a force between them? And so entanglement is similar, except that we don't see it every day and so we haven't gained that intuition that we gained about gravity. 
+And so in quantum we want to exploit this phenomenon.
+
+![image](https://github.com/user-attachments/assets/d55f9df7-5644-40c6-926b-b432bfd260aa)
+
+So let's look at what entanglement looks like in quantum. 
+So we know that when we have an H gate we put in black marbles we get this state on the outside which indicates a 50/50 probability of being white or black and the phase is negative. 
+And so what does that mean? That means that each  individual qubit has a 50 percent probability of being measured white or black, and that over time each pair of qubits has a 25 percent probability of each resulting combination: two whites, white black, black white, black black.
+
+![image](https://github.com/user-attachments/assets/8859a50f-fde6-440d-a42d-7e15b0978fc3)
+
+All right. So, entanglement in quantum. What's interesting about entanglement is that we can have that same 50/50  probability of black and white, but we can make it so that there's some connection between the two. 
+And so it's not an independent probability. So we're going to say, well, in this case: 50/50 probability of being measured white or black, but every pair of qubits has a 50 percent probability of only two result combinations: white white, black black. 
+So we could compel these two qubits. Even though we don't know the outcome of one qubit, once that outcome is known  we know what the other qubit holds.
+
+![image](https://github.com/user-attachments/assets/d772ed16-798f-4bf6-873a-f082f46a4e7c)
+
+We can also entangle it opposite. So just because I showed you an example in which entanglement meant they had the same value, black versus white, we could also entanglement such that they have opposite values.
+So now we have it such that when we measure it whatever is measured in the first one we'll have the opposite in the second one. 
+And we still have a 50 percent probability of measuring white or black, and we have a 50 percent probability of two result combinations; this is just a different two than before.
+But it's still the case that the first measurement determines the result of the second measurement. 
+
+![image](https://github.com/user-attachments/assets/61ef1668-7dda-4e00-a29c-113d3ca935da)
+
+So these are just two entanglement examples. If you have more qubits, you have more examples. And so there are many ways of entangling.
+
+![image](https://github.com/user-attachments/assets/93fe903a-49ea-4123-9a3a-f4ddfddaa804)
+
+So why is entanglement important? Well, it is one of the biggest keys to performance in quantum computing. It's something that classical computing doesn't do.
+But let's just take a small example of how you actually couldn't do any quantum computing without it having to do with superposition. 
+So imagine a variable that's storing a four digit number. 
+And so we're going to use four qubits and they need to work cooperatively to store this four bit number, which would be fine if I want to just store 0100. 
+But I want to store a superposition of particular combinations. 
+Okay, so each qubit is going to hold one digit of my number, right? 
+
+![image](https://github.com/user-attachments/assets/6917e2eb-1713-4e67-8580-022392960da4)
+
+So what I'm going to say is, I want this variable to hold a superposition of four numbers and they have a specific pattern here.
+The pattern is that each of these numbers has a single digit one and all the rest are zero. So we have 1000, 0100, 0010, and 0001. 
+Okay, and all other possible combinations have a zero percent probability. 
+So I have a 25 percent probability of each of these four, and a zero percent probability of all the rest.
+Okay, so let's look at it from the perspective of independent qubits, right?
+So if you look at each qubit independently, we can see that there's a 25 percent probability of measuring a one and a 75 percent probability of measuring a zero.
+So let's revisit our weather example and remember how to go from independent probabilities to multi-qubit: the independent single qubit probabilities to multi-qubit ones.
+
+![image](https://github.com/user-attachments/assets/4d7dbd41-4ce2-433a-9255-0c0c19fed552)
+
+And so we remember that, if I know the probability of something that's independent, then the probability of the combination of multiple [choices] is the product of the probabilities of the independent choices. 
+Okay, so if I were to look at this example, for each digit the probability of a 0 is 75 percent and the probability of 1 is 25 percent.
+
+![image](https://github.com/user-attachments/assets/b3173745-2f5f-4cf3-925a-1bc07aed6606)
+
+All right, so my probability of measuring four zeros is 0.75 to the fourth, right? 0.75 multiplied four times, which is about a third - .32 which is approximately a third. But what I want is for it to be zero.  
+0000 should have a zero percent probability. Only these four should have a probability. 
+So entanglement is present when the probability of outcomes does not follow the independent probability calculations, which means that I can't think of this as four independent qubits. 
+They are working cooperatively, and if I measure a one in any of those four qubits then all of the rest have to be zeros, right? That's the only way this works out. 
+And so, while on the first measurement my probability of measuring a 1 is 25 percent, once I've done that measurement, that changes the probabilities of the other ones. 
+Because if I measure a one now, there's a hundred percent probability of zeros in the rest of them. 
+If I measure a zero, then now I'm left with three bits, one of which is a one. 
+So now my probability has just changed such that they have a 33 percent chance of measuring a one and a 67 percent chance of measuring a zero. 
+So, normally, if I have independent probabilities measuring one should have no effect on the probabilities of the others, but clearly this does.
+
+![image](https://github.com/user-attachments/assets/f5861b23-9d82-4ee9-a8bb-6e762d03ec9e)
+
+All right, so that's just an introduction to entanglement. 
+And so, just in summary, entanglement allows the outcome of one qubit to depend on the outcome of a different qubit, and entanglement is really key to quantum computing algorithms. 
+Entanglement is required even to do something as basic as the superposition of a multi-digit variable, which clearly we're going to want to do. We don't want to just do superpositions of single qubits. Single qubits are not useful on their own. 
+We want to do superpositions of multiple qubits working together to store a large number. 
+And so now we've actually learned in this course, from an intuitive perspective, all of the most important things for quantum computing. Entanglement and superposition are the two things that provide the power of quantum computing.
+Quantum operations form those entanglement relationships between qubits, and operations adjust the probabilities of the superposition so that when we measure we have high probability of measuring the answer we want. 
+However, the limitations due to measurement are what curtail this power. 
+And so all of quantum computing is trying to figure out: how can I take advantage of entanglement and superposition in the face of these limitations based on measurement? 
+And those two limitations based on measurement are: That any measurement provides only limited information, which would be fine on its own but it collapses the superposition.
+I've changed the state, and so now not only would I not get all of my information, once I measure it at all then I lose a big piece of that qubit. 
+And so we have to be very careful about measurement, which means we can't use measurement very often, and measurement is really important in computing.
+
 # 
