@@ -1542,5 +1542,294 @@ And then if we put this back out into our multi-bit bra-ket notation we can see 
 Which is two white balls or two black balls. And it doesn't matter that in my previous calculation the black balls ended up on top and the white balls on the bottom because, when we do the horizontal lines, it doesn't matter the order in which we do the different choices.  
 What matters is the order within the pair, not between the pairs.
 
-https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_entanglement_circuit_PQ.pdf
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_entanglement_circuit_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_entanglement_circuit_PQ.pdf)
 
+[https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_multiqubit_Ops_HW.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_multiqubit_Ops_HW.pdf)
+
+
+# Phase Fun
+
+In this section, we introduce two algorithms that illustrate two quantum properties to do useful work. Phase has interesting properties that allow the phase to transfer between qubits in ways harnessed by quantum algorithms. Interference, which can be seen in patterns existing in the superposition of multiple qubits and which can cause probability amplitudes to cancel out with operations, is another quantum trait that is harnessed by quantum algorithms.
+
+
+Now that we've seen how entanglement works, we want to build up our skills so that we can do some algorithms.
+So, we're going to start out exploring a little bit more about phase and I'm going to call this Fun with Phase.
+
+![image](https://github.com/user-attachments/assets/31d0b141-ffad-4c79-bebb-cb7305c92c6a)
+
+All right. Let's look at a new gate. It's called the Z gate and I think of this as the phase flip gate.
+So, if we have a zero ball, a white ball, it does nothing. But if we have a black ball, it changes it from positive phase to negative phase. Likewise, it also changes it from negative phase to positive phase.  
+What we want to see is, like the controlled NOT, what happens if we have a control on this?
+
+![image](https://github.com/user-attachments/assets/1ebdb987-ab0c-4d42-9cf3-f4b3d4d48f70)
+
+![image](https://github.com/user-attachments/assets/35341d30-b545-4a47-9420-df8f4cb2078f)
+
+So there is, we remember the controlled NOT that, as long as there is a white ball as the control nothing changes. But if there is a black ball as control, then it flips the result.  
+Okay. Let's look at what a controlled-Z looks like. And we'll start out by doing it with what our intuition would tell us.
+How should a controlled-Z work, if it works in a similar way as a C-NOT?
+And so, what we would think is that it would only change the phase if the control ball is black. And that actually makes sense, because look, if the control is white, which is the left column, then the target doesn't change.  
+
+![image](https://github.com/user-attachments/assets/4b68564e-e654-4848-8184-f6a2cf55c007)
+
+If the control ball is black, then we apply a Z gate. But as we know, a Z gate applied on a white doesn't make any difference.
+So, what we see is, the only time a change happens is when I have a black ball and that changes from black to negative black or from negative black to black.
+All right. Now, let's look at what the math tells us about what's going on. So, I have here the matrix for the controlled Z. And you can see, whenever you see 1 0 0 1 in a square, that means to not do anything to those.
+
+![image](https://github.com/user-attachments/assets/6d2a5425-f777-407b-9b75-641f72e44744)
+
+So, with the ones down the middle, you see the first three choices |0 0>, |0 1>, |1 0> have no change. And the last one is going to be negative.
+So, let's look, let's calculate this out and see. So, in the  first case, we start with a |0 1>, which is a 1 in the second position. And if we multiply it out, then we'll see that it had no change.
+Likewise, when we start with a |0 0>, that's a 1 in the  topmost position, and that the result is 1 0 0 0, which is also no change. Then we have our third choice, which is a |1 0> . 0 0 1 0 on the vector.  
+If we multiply this out, we'll get exactly the same as we started with. But then we come to our fourth choice and what we notice is, yes, we have that negative sign as we anticipated.
+But notice that when we write this in bra-ket notation, the negative sign isn't in front of a single qubit. It's in front of the two-qubit pair.
+And it turns out that either qubit could hold that negative one, or that negative phase. So, in this case, we have a phase that's being applied to a two-qubit pair, as opposed to a single qubit.
+This is going to be very important later, so you want to keep remembering this about phase: when we calculate multi-qubit operations, phase is associated with a pair.
+And then we use our algebra, or the opposite of the tensor product, to pull out what are the possible qubit assignments that could multiply together to get this multi-qubit result.
+
+![image](https://github.com/user-attachments/assets/1b34b7b0-453e-4ba1-a0e0-3b4398fa8ace)
+
+So, what we really want to understand from this is that multi-bit operations aren't solved neatly with visual representation. There are limits to the visual representation or there are some rules about phase that are not as clear when we use the visual representation.
+So, phase is allowed to do more things than we think.  It's sort of, it's allowed to wander. So, phase is associated with two-bit pairs, not just the single bit of a pair.
+And any mathematically correct separation to individual bits is acceptable.
+And we also learned that control gates, we already saw that C-NOT led to interesting quantum behaviors. And now we're seeing that the C-Z gate also leads to interesting behaviors that are going to be  more important later, this type of behavior.
+
+[https://github.com/SteveJustin1963/QC/blob/main/audit_Phase_PQ.pdf](https://github.com/SteveJustin1963/QC/blob/main/audit_Phase_PQ.pdf)
+
+# Phase Kickback
+
+
+All right. Now we're going to go over phase kickback. This isn't an algorithm but this is an interesting effect that you get by constructing a particular circuit, a little bit like entanglement, that we're going to use as a building block in our next algorithm.  
+
+![image](https://github.com/user-attachments/assets/75ed5445-90b3-4700-8e34-e93e9e6dacc3)
+
+All right. So, let's just revisit the C-NOT once again. When the C-NOT has a white ball for control, like in the left column, it does nothing to the target.
+But when it has a black ball in control, on the right, it flips the target. It becomes, it applies a NOT on the second input.
+Okay. So, the target toggles if and only if the control is black.  
+Control never changes. Or does it? This is how we're going to explore the effect of superposition, phase, and entanglement on changing how the C-NOT works, and with our intuition.
+
+![image](https://github.com/user-attachments/assets/be915af7-acf0-48b4-b881-30606a29be07)
+
+All right. So, let's look at what would happen if we gave a C-NOT two inputs in superposition, with the target already having a negative phase but the control having a positive phase.
+So, as always, we need to put this in multi-qubit format. And we have a negative phase, so that'll be multiplied along with the rest.
+So, we put the first ball in the first two first positions and then the white ball in the first position of the next two.
+And then we distribute the black balls and those two have a negative symbol, so the first and third are going to have a negative symbol with the black ball second.
+And then the second and fourth spot will have that white ball, no negative sign. So, now we have four choices and two of which have a negative sign.
+We put all of these separately into their own little C-NOT. But I do want to note that as we saw in the Fun with Phase video, I have assigned the negative sign to the pair instead of to the individual ball.
+Just so we don't get messed up in remembering that, even though we're doing visual representation, that negative sign is going to be associated with the pair. And C-NOT doesn't affect the sign.
+Okay. So, let's look at this. Let's put this, each of these balls through its input of the C-NOT.
+And we can see that in the top two pairs our control is black and in the bottom two pairs the control is white. So, we're going to end up swapping those colors on the top two.
+Okay. So, I went ahead and copied over my negative signs for the phase and I also copied over all of those control bits, because the control doesn't change in an individual C-NOT but the targets do when the controls are black.
+So, now we have four pairs again, but we'll note they're in a slightly different order this time.
+Which is fine because remember that while order matters within a pair, the order doesn't matter between pairs.  
+But just so it's easiest for us to put it back into separate bit format, I'm going to just swap the order of those two so that we have black black, black white, white black, white white.
+So that we can do our opposite tensor product or factor back out into individual bits.
+So, let's see, let's figure this out. We have. And the other thing I want to note is that now that negative sign is on a different pair.
+Okay. It used to be on the black black and now it is on the black white.
+So, let's see how that affects us when we split that back out into individual pairs. So, we still have the same combinations and so an equal probability.
+So, we know we still have black white black white. The question is, where do the negative signs go?  
+And so, what we notice is well, so these two pairs there's a negative sign in the bottom pair and so I'm going to try putting it with the black.
+And then that would mean that the top pair has one negative sign. The only way the top pair could be positive is if both are negative because we know that if we multiply negative 1 times negative 1 we get positive 1.  
+So, that means that we should try having the black ball on top also be negative, which would cause that second pair to have a negative sign as well.  
+Now, because those are all the negatives in the puzzle, in the problem, then that means that the two white balls are positive and everything works out..
+What we want to note here is that if you look at our original start and what we got if you if you push out all the details, and just look at simply the inputs and outputs, what did get? We got a situation where we used a C-NOT and the target did not change but the control did.
+
+![image](https://github.com/user-attachments/assets/0eaf6a23-4d99-443c-a071-1d36baf19a82)
+
+This is very interesting and we are going to exploit this.  
+But we want to notice this, that actually we had the situation where target affected control.  
+And the way it affected the control was by copying the phase from the target to the control.   
+Because if the target, turns out that if the target had been positive, if everything had been positive, then phase would never have been involved and the C-NOT would have done nothing.  
+So, the only thing, the only time that this changes is when we have this negative phase.
+
+![image](https://github.com/user-attachments/assets/8c2d9439-b0d3-4592-b56e-caf62f7a60e8)
+
+Okay. So, let's look at what would happen if we put some things around the circuit.
+So, to get to that starting point of the inputs to the C-NOT, that would be the same as having H gates.  
+You started out with a white and a black, and you put them through H gates because black through an H gate turns into the negative phase and white through an H gate gives you superposition with positive phase.
+Now, we already know what happens when we put these two through the C-NOT gate.  
+And so, we know that we'll come out with both of these having a negative phase. All right. No problem.
+Now we put these back through H gates and look what happened. We get black balls now.
+So, with this circuit we were able to turn a white ball into a black ball.
+Even more interestingly, if the second ball had been pure white then I would never have had a negative phase and they would both be white on the out side.
+So, this means that we have a way of copying a pure state, white or black, to another pure state, white. 
+Now, make sure, I need to make sure and remind you that it was only because it was a pure state that we were able to do this.  
+So, it's not like if I have a superposition I can copy that, all of the state of that, to another qubit.
+In this case, I'm able to copy the pure state one into the pure state of another using this circuit.
+
+https://github.com/SteveJustin1963/QC/blob/main/audit_Phase_Kickback_PQ.pdf
+
+
+# Bernstein-Vazirani Oracle Algorithm
+
+And now, we're getting to algorithms.
+I'm going to present a certain type of algorithm, which I like to call simultaneous computation with oracles.  
+
+![image](https://github.com/user-attachments/assets/2547d475-a762-4fc1-a003-2a002d41a754)
+
+We've actually used oracle-based games, which are related to algorithms, probably in our childhoods.  
+And these are defined by having a protocol that provides limited information, in which the player needs to find an algorithm to determine the solution based on some decisions on what question to ask next of that oracle, based on information from a previous one.
+For example, Battleship. Right. All you get to say is a location and all you hear back is hit or miss. You don't find out how close you were, only hit or miss. And you don't know what type of ship you've hit, if you've hit it.
+Mastermind is sort of the canonical one because you're actually trying to guess a secret code and you're given information on how many of the colors are correct and how many both are correct in color and in position.
+And then of course 20 Questions. 20 Questions has been around for generations and it's just a set of yes or no questions. The one person thinks of an object and the guesser tries to guess it in 20 yes or no questions.
+So, these aren't just games, they're actually used extensively in computer science, in cryptography and security, because systems tend to leak very specific kinds of information.
+I mean, even in a system that's secured, you know when you try a password you're told it's incorrect. That's information.
+And so, computer scientists use oracles to try to figure out what's the most you can do with that limited information.
+What happens if you, if you're able to read a message that's sent to, for example, the bank from an ATM. Could you then later send an identical message, even if you didn't know what the contents were? If you sent an identical message later, would that mess up things?
+So, those are the sorts of useful reasons for having an oracle.
+So, an oracle is any computerized system that you can interact with and get information out of. And we try to make algorithms to figure out what we can do with that information, so that then we can turn around and make the security higher, so that it leaks less or different information.
+And now, this is a really good fit for quantum because in  quantum likewise we, in all calculations, we can't get full information. We can't find out the full quantum state. And so we want to figure out what operations we can do and short of measurement or measurement.
+But the question is, what can we do if we can't get full information? Because that's going to be the reality in a quantum system.
+
+![image](https://github.com/user-attachments/assets/70368a4c-70ad-4d73-b695-eb01344751da)
+
+Oracle-based quantum algorithms start with an oracle in the middle. And this oracle, you can ask it a question. So, you give it some set of information and it gives you an answer back with some set of information.
+And so the algorithm itself is all of the stuff you do with that information. What should I ask it and what should I do based on the answer it gives?
+So, we want to put gates before and after the use of the oracle and the oracle is going to provide that piece of information.
+
+![image](https://github.com/user-attachments/assets/f4f1e243-5871-4c1e-a099-1d2ee5bc8ccb)
+
+Now I do want to note that we're not, at this moment we're not going to do useful algorithms. We're learning algorithms to try to get an intuition into the nature of quantum algorithms and how it is that quantum computers can get speed over classical computers in some cases.
+So, I'm going to describe an oracle. So we're going to do two algorithms. I'm going to describe an oracle and then design the sequential and then the simultaneous algorithm based on that oracle.
+And the idea is that a classical computer would be forced to do a sequential algorithm, but with quantum properties we can do a simultaneous algorithm that goes faster.
+But again, only in these limited circumstances.
+
+![image](https://github.com/user-attachments/assets/49340d31-6c27-4117-869b-6ff4266d4258)
+
+So, you can think of these as proofs of concept of what quantum calculations might be able to do.
+So, let's do one. It's based on the Bernstein-Vazirani algorithm and so I'll call it the BernVaz oracle.
+So, there exists this three-bit secret code and you want to figure out what that is.
+And so this oracle contains a sequence of CNOT gates, in which each input corresponds to a one in the secret code and the control for the response, which is the target.
+So, this means that inside this oracle, there are some CNOT gates. But maybe not connected to everything.
+So, in this case the secret code we're going to work with is 0 1 1. And so I've made these two a little bit darker to indicate these are the two that have a CNOT gate that are connected to the response.
+
+![image](https://github.com/user-attachments/assets/ee4f9795-3e12-457e-818d-0235abb37768)
+
+Alright. So, let me show you how this works. Let's imagine I give a guess of 1 0 1.
+So, these two have CNOT gates and there's only one. We recall that if you have a white ball as the control to a CNOT gate, nothing changes. And so there's a single black ball connected to a CNOT. So then, the response is going to flip one time.
+Now, a second guess is 0 0 1. Notice that the only thing I changed was the ball that wasn't connected to a CNOT at all.
+So, that means my output will be the same. It'll toggle one time based on this black ball that's going in here.  
+Now, if we give it 1 1 1, we can see that there are two black balls connected to CNOT as control, which means we'll flip this input twice, which will get us back out the black again.
+So, that's how the oracle itself works. And now we need to figure out how to build something around it that will allow us to figure out what that secret code is.
+All right. So, note that this does not directly tell us the secret code. We did three probes and we can't find out one some information from that probe.
+Right. We can figure out that this top is a 0 because when we toggle just that one, nothing happened to the output.
+So, that's one piece of information we got. But we didn't  necessarily figure out how many, whether these were ones and zeros on the output.
+So, here with this probe 0 0 1, we actually did figure out that the third bit is a 1 because it's the only black ball going in and it caused a flip.
+So, by the end of this, we figured out that this is a 0 and this is a 1, and we don't know the middle one yet.  
+And then, on the third probe, we already know the first one doesn't matter. We already know that the last one is a 1.
+And so, by giving a black for the middle one we actually figure out that this is a 1.
+So, with this, these three probes, just how they happen to be constructed, which is chance, I was not doing it for this reason, we actually could figure out all three bits.
+But there's a more methodical approach we can use to figure out the three bits.
+
+![image](https://github.com/user-attachments/assets/0de590d7-6a4d-40bb-b5ea-3ef662201287)
+
+So, I invite you to think about a methodical approach. No matter how many bits we have, we could have a five bit input, a ten bit input, right? However long this secret code is, what is the sequence of probes you should do and get out one piece of information each time? Right. Which is whether that black ball stayed black or turned to white.
+What would we give as the sequence of probes and how many would it take?
+And I will wait just a second. I invite you to pause the video right now and think about that, and try to come up with something yourself and then I'll go through it here.
+All right. So, the sequential algorithm is to do a series of probes where you only ever have one black ball, because then that tells you whether that black ball is attached to a CNOT or not.
+So, if the response does not flip, like this first case, that means it's a 0.
+But in the second case it does flip, which means the second one is a 1.
+And then in the third case it also flips, which means the third one is a 1. 
+So, we're guaranteed that if I have an n-bit code, I can figure out the code in n trials.
+All right. So, let's look at what we can do with quantum. All right. So, we're going to input all white balls for the guess and a black ball for the response.
+
+![image](https://github.com/user-attachments/assets/0de91e73-fe30-489c-b073-f8a02e0e7b07)
+
+And we're going to put H gates before and after the query to the oracle.
+And we're going to expose phase flip, so that instead of having only a single piece of information that might change, which is the response, we're actually going to cause the other bits to change, which allows us to have more information.
+Okay. So, we know that, and by the way this is a very common way to do an algorithm, is to put everything through a series of H gates at the beginning and then put them through a series of H gates at the end to get back pure states and then see what you've got.
+So, we've got these H gates. Now we're in the situation that for these CNOTs, if there's a CNOT we've got a positive 50-50 going in as control and a negative 50-50 as a response.
+And we already know that if that happens, if the response is a negative 50-50, it causes the control to change sign and ultimately, when it goes through an H gate, change from white to black.
+But it doesn't change the response. So no matter how many CNOTs are connected to this negative 50-50 response, it will stay the same and perform that phase flip on every single one of those inputs that's a positive 50-50.
+So, let's see what happens here. We had a 0 1 1 and so now the two ones got a negative sign.
+And so then when we put everything through an H gate, we actually get the exact secret code 0 1 1.
+And so in a single operation with this oracle, because we preceded and succeeded it with H gates, we actually end up finding out the secret code in a single trial.
+So this is what I call simultaneous computation in that because it compels everything to 50-50, it stores all possible combinations.
+But then the nature of the operations is such that when we take it out of superposition, it puts it into what we want.
+
+# Archimedes Oracle Algorithm
+
+![image](https://github.com/user-attachments/assets/9cba4c5d-ecaa-4fbd-9edd-7db72e124a0d)
+
+All right. So, let's try another one.
+So, there exists a set of three bit codes. And given a three bit guess, the oracle will flip the response if the guess is one of the three bit codes.
+So, if I give it a black white black, it will give me the guess back black white black, but the response will be black or white based on whether or not this was one of the secret codes.
+
+![image](https://github.com/user-attachments/assets/2f1ba708-7ec1-483b-be83-d09c2e5dd557)
+
+So, imagine that there are four secret codes: 0 0 0 , 0 1 0, 1 1 0, and 1 1 1.
+So, 0 1 1 is not one of the secret codes and so it will not flip its response.
+1 1 0 and 0 1 0 are in the set, and so for each of these, regardless if I start out with a black or a white, when I give it one of these, it will flip the response. So, that is how the oracle works.
+All right. So, using this oracle, we want to figure out whether there are zero or four secret codes. We have some piece of information that's told us that there are either zero or four secret codes and we need to figure out which one it is.
+So, go ahead and think about this. Pause the video and see if you can come up with an algorithm, and then we'll go through it together.
+Okay, so let's go through the algorithm. We just try randomly or we can go in sequential order. It doesn't matter what we choose as the order.
+However, once we find one secret code, we know it's not zero secret codes. So, we know we've got four secret codes.
+The other way is that once we reach five non-secret codes, we know we can't have four secret codes.
+So, I can either, so I just test in any order I want. And it's until I find five non-secret codes or one secret code.
+So, in the worst case it takes five probes, which for a total of eight, that's half plus one.
+And so, if we had a larger problem with ten bits, so two to the ten combinations, we would have to go to one half plus one.
+So, this is a linear time algorithm, just like the last one was. Last one was linear time on the number of bits.
+This is linear time on the number of combinations, which is actually a lot larger than the number of bits.
+And so we would like to see a faster one.
+All right. So, let's look at what we do. This will be again familiar. We'll put in three white balls and have a black ball for response.
+And this time it looks like it's the same, that we might be doing phase flips. But it's not actually the same because we don't have any knowledge of CNOTs inside.
+So, we're not using phase flips, but we are putting everything in superposition so that there are all possible combinations.
+And so, what it turns out is, that if there are no secret codes then the output will be all whites but if there are four secret codes then some of the outputs will be non-white.
+So, let's look at an example where there are zero secret codes. Let's look at what happens if there are zero secret codes.
+So, if there are zero secret codes, the oracle does nothing, okay, because I gave it white balls and it's gonna give me back white balls. And it doesn't flip the response, so I get back all white balls.
+What I want to figure out is, what happens when there are four? So, I'm gonna use these four codes and we're gonna go through what happens. And I must admit that this is quite dense.
+So, what happens. I need to put these in a four bit combination, set of combinations.
+And so, what I end up having is, I have this negative state at the end.
+So, I have these combinations where I have all eight combinations of the first three bits.
+And then I have 16 because then we have two choices, we either are negative phase with a black ball at the end or positive phase with a white ball.
+So, you can see in all of these choices, whenever the last one is a black ball I have a negative phase.
+So, I have these pairs, these two are the same in the first three bits, they're only different in the last one. Same with these two, these are the same in the first three bits, only different in the last two.
+So, we have them all paired up and these are our 16 states going into the oracle.
+And recall that what we would need to do is put each one of these individually through the oracle.
+And what we know about the how the oracle works is, if it is one of the secret codes it will flip that last ball, the color of that last ball.
+So, there are four of them.
+0 0 0 which is down here. So, this pair will get flipped. 1 1 1. This pair will get flipped.
+1 1 0. This pair will get flipped. And 0 1 0. This pair will get flipped. So, let's let's look at that happen.
+So, those are the four pairs that got flipped because those are the secret guesses.
+And so, what ends up happening is, the phase of those four pairs get flipped.
+It's not a phase kickback, but it did flip the phase of those particular ones.
+All right. So, it turns out that if I use algebra to factor out this same state, the negative black with a white, we can do this and we'll end up with eight combinations.
+And anywhere the phase flipped on these, we're left with a negative phase. So, the four that are the secret codes now have negative phase for this combination of eight.
+Whereas when we had all white balls going in and there were no secret codes, it didn't flip anything, which is why we then end up with white balls coming out.
+But here we have now some negative phases and we have to figure out what those negative phases do. How does that turn into a black ball?
+Well, we know that black balls result from things going through H gates.
+But this looks like a little bit of chaos because we don't know how that's gonna factor out into three individual bits and which ones are going, whether there will still be ones with negative phase or not.
+So, let's break this down a little bit more and make sure if this seems confusing to you, you can always do it on paper. You can show more steps and you can always repeat the video.
+All right. So, let's look at just one of these sets of three going through an H gate.
+Okay. So, I have white black black and I put all three of those individual bits through the H gate.
+And then I have these, all of these three bit combinations that are from the tensor product of these three superposition bits. Okay.
+And then some of these are going to cancel, may cancel out in the end. Okay.
+So, then what I do is I put each set of these three through these gates. And different sets are going to have negative signs on different sets of three.
+So, when I'm multiplying them back out, so this one has a negative on the outside.
+And so I do my internal calculations and then I distribute that negative sign and negate all of them.
+So, if I have a positive one, I just do the H gates straight and I multiply everything out and into the different combinations. Right.
+So, this top one is the black ball from all three. And there were two negatives, so that canceled out and became a positive.
+This one, black black white, drew the black ball, the black ball, and the white ball so that was only a single negative, which is why it retained a negative.
+So, basically, in this set of eight we will have a negative sign if only one of the last two are black. So, black white, black white, white black, white black.
+But if both are black, the negatives cancel out. And if both are white, there were no negatives to begin with. So, we can use the same logic throughout.
+This set of three has only one negative sign on this middle black, so any state that has that middle one being black, which is these four states, will have a negative sign.
+And all of the ones that have that middle state being white will be positive.
+But then I distribute the negative sign, and now the top four are positive and the bottom four are negative. So, we would go through, for each of these sets, we would calculate all the positive and negatives for each of those sets. Okay.
+And then, I've lined them up differently so that I can easily see here. I can line up all of the like ones.
+And so, notice that just because this one up top had a negative, it doesn't mean that internally it's negative.
+So, we couldn't do a shortcut that said, “oh, well, these four are negative, so those are all going to be negative.” Okay.
+But we do notice that in some of these rows, like this top row, there are four negatives and four positives, so those are going to all cancel out. Those are all gone.
+We have another row, four negatives and four positives, so these are all gone. So, now it's impossible at this point to have all white balls.
+Because we don't have all possible states left and, spoiler alert, these two rows also are half and half positive-negative.
+And so we're left with these two rows up top and these two rows on the bottom, where some have been canceled out and some have not been cancelled out.
+At the end, we ended up with four states left.
+It's impossible to take these out to the original three qubits and that's okay. That means that they're entangled.
+So, we ended up with three entangled qubits. And what we also notice is that all of these three ball combinations have a black ball in them.
+So that's the reason why we're guaranteed not to get a white ball. It's because interference made it such that all of the three white ball combinations were no longer possible. And so, anything we read out will have a black ball in it guaranteed.
+So, in the first algorithm we used phase kickback and in the second algorithm we used interference.
+So, in summary, one paradigm for developing algorithms is using these oracles, which are already used in classical computer science for cryptography and security purposes.
+But it turns out it's even more critical for quantum computing. And operating on multiple superposition states simultaneously is the key to performance.
+And we saw that in both algorithms.
+Bernstein-Vazirani used phase kickback to obtain information from those CNOTSs because we were told there were CNOTs inside.
+Whereas, Archimedes, we weren't told what was inside. We used the oracle just as a blind oracle and we used interference to change the mix of the states left.
+So it got very complicated with lots and lots of states, but many of them were negative and many of them were positive, and so a lot of them cancelled each other out.
