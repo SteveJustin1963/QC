@@ -1500,14 +1500,23 @@ You do a matrix multiplication of the gate operation matrix and the qubit state 
 # Entanglement Circuit with Math
 
 All right. Now we're ready for the entanglement circuit. We're going to do it two ways: visual representation and mathematically. 
+
+![image](https://github.com/user-attachments/assets/06a6ca57-b9de-4340-9e88-acb6bcc17b7b)
+
 So, our goal is to entangle two qubits, and recall that there are many different ways you can entangle but today we're going to do the same entanglement circuit.
 So, the same entangle circuit takes all white balls and produces all balls that have a 50-50 chance of being measured black or white.  
 But they do have a relationship, and that relationship is that if you take pairs of those, those pairs will always have the same measurement. 
 And this is because the first measurement determines the value and the other pair now has been changed to match it. And that's what entanglement does.
 So, remember that measurement is the action that determines whether something is black or white.
 All right. So, let's see how this works. The entanglement circuit is very simple, it's merely an H block that puts the control bit in superposition before moving on to the target.  
+
+![image](https://github.com/user-attachments/assets/41ecda91-bca7-400b-a89e-5b0df7ce1f5a)
+
 So, we have a white target but we have our H gate that receives the white and spits out a black or white. Okay. And so we need to figure out what happens when the control is not simply a zero or a one pure state.
 Well, let's calculate it. We're going to calculate it, like I said, two ways: one visual and one mathematically. And I would like to invite you to actually pause the video now and try it. You can try it with the visual representation and then you can try it mathematically.
+
+![image](https://github.com/user-attachments/assets/fcdd44eb-229d-4637-9925-4bf7917073ad)
+
 All right. So, let's look at it with the visual representation. We know that when we go through the H gate, we get black-white superposition. Now we need to put this into two-bit representation.  
 So, we take the black and the white and that becomes the first ball of each pair. It's very important, remember, in a C-NOT that the control be the first in each pair.
 And then our target ball is not in superposition, so that's going to be a white ball as the second of each pair.
@@ -1516,14 +1525,22 @@ So, in the first C-NOT we can see that the control is black, which means that I'
 In my second C-NOT, my control is white, which means I'll make no change, which means we get the white-white.
 So, now we can see that we have a 50-50 probability of getting each of these two pairs of results. One is both measuring black and one is both measuring white.
 And the way we could figure out that this is entangled is to find that there are no individual states of bits that, if you do the tensor product to multiply it out, to figure out what it looks like in multi-bit state, it could never look like this. So, that's how we know we have entanglement.
+
+![image](https://github.com/user-attachments/assets/877239e0-c157-40fb-b585-c598efae26ae)
+
 All right. Let's try this again with mathematics. So, we know that when a white ball goes into superposition it becomes equal probability of black or white, with a positive phase.
 So, 1 over root 2 |0> plus 1 over root 2 |1>. Okay. Or the vector above.  
 Okay. So, then we put this in superposition state and so that is equal probabilities of |0 0> or |1 0> because again we always put the control bit first with no probability of getting a |0 1> or a |1 1>. 
 So, now we calculate this using matrix multiply.
+
+![image](https://github.com/user-attachments/assets/4ae07aa9-b72d-42dc-93e6-4f53b640aa9a)
+
 Okay. So, we bring our vector down and we move that 1 over root 2 to the left because it's a multiplicative factor and so we'll multiply it out after we do our calculation.
 So, we have our C-NOT gate and now our multiplication is simple, because it's just ones and zeros.
 So, we see that instead of having 1 0 1 0 we end up with 1 0 0 1. Because if you look at the third row and fourth row, when you do the sum of products with our vector column that's what we get.  
 And then if we put this back out into our multi-bit bra-ket notation we can see that that means that the 1 over root 2 is on the term |0 0> and the term |1 1>, and so that corresponds to a 50-50 probability of those outcomes.  
 Which is two white balls or two black balls. And it doesn't matter that in my previous calculation the black balls ended up on top and the white balls on the bottom because, when we do the horizontal lines, it doesn't matter the order in which we do the different choices.  
 What matters is the order within the pair, not between the pairs.
+
+https://courses.edx.org/asset-v1:UChicagoX+QUAN11000+3T2024+type@asset+block/audit_entanglement_circuit_PQ.pdf
 
