@@ -321,7 +321,8 @@ Microwaves need very little storage or speed, so they are optimized for low cost
 Laptops and desktops provide large storage and fast computation, but supercomputers supercharge those two aspects.
 Phones, tablets, and watches depend heavily on communication with much less storage.  
 
-![image](https://github.com/user-attachments/assets/d61f9f97-923b-4242-b492-4e3295e0b2a5)
+![image](https://github.com/user-attachments/assets/1623b988-6e5f-42d9-a0d4-3c9368f87f4d)
+
 
 There are currently many competing technologies for implementing quantum computers. 
 There are currently many competing technologies for implementing quantum operations. 
