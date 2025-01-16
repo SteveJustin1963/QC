@@ -7,7 +7,7 @@ Welcome!
 
 This course will introduce you to the key principles of quantum computing. We will use two key methods to build this knowledge: intuition and math. First, you'll explore the unique features of quantum computing through relatable activities. Then, we'll provide you with the mathematical background to be able to calculate the results of quantum operations.
 
-f transcript. Skip to the end.
+ 
 Hello and welcome to Introduction to Quantum Computing for Everyone.
 Quantum information science is an exciting field that draws from information theory, computer science, and quantum mechanics to process information in fundamentally new ways.
 Quantum mechanics emerged in the 1920s to describe certain puzzling behaviors of elementary constituents of matter and light.
@@ -303,7 +303,7 @@ Quantum computing resources are targeted for applications in chemistry, optimiza
 
 ![image](https://github.com/user-attachments/assets/e867955c-3f06-4c1a-af14-a3efaf66fc6a)
 
-Start of transcript. Skip to the end.
+ 
 Hello! Today I'd like to give you a little  bit of an introduction to quantum hardware.
 Computers come in many forms.
 There are familiar ones, like computers, laptops, tablets, and even your smartphone. 
@@ -545,7 +545,7 @@ And what we know: that for random, it's also 50/50 probability of measuring blac
 ![image](https://github.com/user-attachments/assets/e2e4e894-5ccb-45f3-aa34-8c9bf9f52989)
 
 
-Start of transcript. Skip to the end.
+ 
 Okay, now I'm going to go into a few more details about how this visual representation depicts the superposition state.
 So, we've been showing a 50-50 probability, in which case we have two spots: one that's black and one that's white.
 And that indicates a 50-50 probability of measuring black or white. But what happens when we have other probabilities? The idea with this representation is that in a certain rectangle, all of the choices are equal probabilities.
@@ -763,7 +763,7 @@ What it means is what we've been seeing. that there's a probability, a known pro
 
 # Measurement and Superposition
 
-of transcript. Skip to the end.
+ 
 This time, we're going to take a lot closer look at two concepts that we've been touching on: superposition and measurement.
 I'm going to start out by having analogies to daily life and what we know about superposition and measurement in daily life, and then we'll look at how this is applied to quantum, what we've seen before and some new phenomenon because this is the key to how quantum operations are more powerful than classical operations, along with one that we haven't introduced yet called entanglement.
 So, superposition, measurement, and entanglement are going to be both the power and the limitations behind quantum computing.
