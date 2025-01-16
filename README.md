@@ -1760,6 +1760,9 @@ So, if I give it a black white black, it will give me the guess back black white
 So, imagine that there are four secret codes: 0 0 0 , 0 1 0, 1 1 0, and 1 1 1.
 So, 0 1 1 is not one of the secret codes and so it will not flip its response.
 1 1 0 and 0 1 0 are in the set, and so for each of these, regardless if I start out with a black or a white, when I give it one of these, it will flip the response. So, that is how the oracle works.
+
+![image](https://github.com/user-attachments/assets/1ff092c9-eeb2-4b57-9908-38c41057ef0f)
+
 All right. So, using this oracle, we want to figure out whether there are zero or four secret codes. We have some piece of information that's told us that there are either zero or four secret codes and we need to figure out which one it is.
 So, go ahead and think about this. Pause the video and see if you can come up with an algorithm, and then we'll go through it together.
 Okay, so let's go through the algorithm. We just try randomly or we can go in sequential order. It doesn't matter what we choose as the order.
@@ -1771,12 +1774,18 @@ And so, if we had a larger problem with ten bits, so two to the ten combinations
 So, this is a linear time algorithm, just like the last one was. Last one was linear time on the number of bits.
 This is linear time on the number of combinations, which is actually a lot larger than the number of bits.
 And so we would like to see a faster one.
+
+![image](https://github.com/user-attachments/assets/1d684c11-6b19-4d4d-8b51-302802d047f2)
+
 All right. So, let's look at what we do. This will be again familiar. We'll put in three white balls and have a black ball for response.
 And this time it looks like it's the same, that we might be doing phase flips. But it's not actually the same because we don't have any knowledge of CNOTs inside.
 So, we're not using phase flips, but we are putting everything in superposition so that there are all possible combinations.
 And so, what it turns out is, that if there are no secret codes then the output will be all whites but if there are four secret codes then some of the outputs will be non-white.
 So, let's look at an example where there are zero secret codes. Let's look at what happens if there are zero secret codes.
 So, if there are zero secret codes, the oracle does nothing, okay, because I gave it white balls and it's gonna give me back white balls. And it doesn't flip the response, so I get back all white balls.
+
+ ![image](https://github.com/user-attachments/assets/e61a5c09-b3f7-47d0-a0bc-248b8d4758d9)
+
 What I want to figure out is, what happens when there are four? So, I'm gonna use these four codes and we're gonna go through what happens. And I must admit that this is quite dense.
 So, what happens. I need to put these in a four bit combination, set of combinations.
 And so, what I end up having is, I have this negative state at the end.
@@ -1798,7 +1807,13 @@ And anywhere the phase flipped on these, we're left with a negative phase. So, t
 Whereas when we had all white balls going in and there were no secret codes, it didn't flip anything, which is why we then end up with white balls coming out.
 But here we have now some negative phases and we have to figure out what those negative phases do. How does that turn into a black ball?
 Well, we know that black balls result from things going through H gates.
+
+![image](https://github.com/user-attachments/assets/a4a7f970-c23d-4164-9d0b-683f30d73733)
+
 But this looks like a little bit of chaos because we don't know how that's gonna factor out into three individual bits and which ones are going, whether there will still be ones with negative phase or not.
+
+![image](https://github.com/user-attachments/assets/4f7662d4-d2ed-4fde-b0a4-a8f21698c4ed)
+
 So, let's break this down a little bit more and make sure if this seems confusing to you, you can always do it on paper. You can show more steps and you can always repeat the video.
 All right. So, let's look at just one of these sets of three going through an H gate.
 Okay. So, I have white black black and I put all three of those individual bits through the H gate.
@@ -1816,16 +1831,25 @@ This set of three has only one negative sign on this middle black, so any state 
 And all of the ones that have that middle state being white will be positive.
 But then I distribute the negative sign, and now the top four are positive and the bottom four are negative. So, we would go through, for each of these sets, we would calculate all the positive and negatives for each of those sets. Okay.
 And then, I've lined them up differently so that I can easily see here. I can line up all of the like ones.
+
+![image](https://github.com/user-attachments/assets/3e424460-cd32-41db-8652-1177dd90a081)
+
 And so, notice that just because this one up top had a negative, it doesn't mean that internally it's negative.
 So, we couldn't do a shortcut that said, “oh, well, these four are negative, so those are all going to be negative.” Okay.
 But we do notice that in some of these rows, like this top row, there are four negatives and four positives, so those are going to all cancel out. Those are all gone.
 We have another row, four negatives and four positives, so these are all gone. So, now it's impossible at this point to have all white balls.
 Because we don't have all possible states left and, spoiler alert, these two rows also are half and half positive-negative.
 And so we're left with these two rows up top and these two rows on the bottom, where some have been canceled out and some have not been cancelled out.
+
+![image](https://github.com/user-attachments/assets/1d6cb68a-d1b2-471d-8ed7-6b47c681796e)
+
 At the end, we ended up with four states left.
 It's impossible to take these out to the original three qubits and that's okay. That means that they're entangled.
 So, we ended up with three entangled qubits. And what we also notice is that all of these three ball combinations have a black ball in them.
 So that's the reason why we're guaranteed not to get a white ball. It's because interference made it such that all of the three white ball combinations were no longer possible. And so, anything we read out will have a black ball in it guaranteed.
+
+![image](https://github.com/user-attachments/assets/4584ee8c-e6cc-4874-87eb-e334e902ce27)
+
 So, in the first algorithm we used phase kickback and in the second algorithm we used interference.
 So, in summary, one paradigm for developing algorithms is using these oracles, which are already used in classical computer science for cryptography and security purposes.
 But it turns out it's even more critical for quantum computing. And operating on multiple superposition states simultaneously is the key to performance.
@@ -1833,3 +1857,33 @@ And we saw that in both algorithms.
 Bernstein-Vazirani used phase kickback to obtain information from those CNOTSs because we were told there were CNOTs inside.
 Whereas, Archimedes, we weren't told what was inside. We used the oracle just as a blind oracle and we used interference to change the mix of the states left.
 So it got very complicated with lots and lots of states, but many of them were negative and many of them were positive, and so a lot of them cancelled each other out.
+
+https://github.com/SteveJustin1963/QC/blob/main/audit_Oracles_PQ.pdf
+
+https://github.com/SteveJustin1963/QC/blob/main/audit_Algorithms_HW.pdf
+
+https://github.com/SteveJustin1963/QC/blob/main/audit_Part_1_Exam.pdf
+
+# Post-course Survey
+
+This survey will help your instructors understand how this course improved your knowledge of quantum computers and quantum information science. Please answer each question to the best of your ability.
+
+- What do you think superposition means?
+- Why do you think superposition is important for quantum computing?
+- What do you think reversibility means?
+- Why do you think reversibility is important for quantum computing?
+- What do you think entanglement means?
+- Why do you think entanglement is important for quantum computing?
+- In 2 or 3 sentences, explain why you think it is important for something to exist in two states at once.
+- Describe what happens when a quantum bit (also called a qubit) is measured.
+- Describe what you think a quantum computer looks like.
+- Choose all of the problems that quantum computers are expected to be better at solving, compared to classical computers.
+
+![image](https://github.com/user-attachments/assets/f1c06bc5-15ed-4fc2-8213-9544eb3f12e2)
+
+- Some people have asked when there will be a hand-held quantum computer. Describe your thoughts on when or if that will happen, and why.
+- What is the most interesting thing you learned about quantum computing?
+- What questions do you still have about quantum computing?
+
+
+
