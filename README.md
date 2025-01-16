@@ -9,7 +9,10 @@ This course will introduce you to the key principles of quantum computing. We wi
 
  
 Hello and welcome to Introduction to Quantum Computing for Everyone.
-Quantum information science is an exciting field that draws from information theory, computer science, and quantum mechanics to process information in fundamentally new ways.
+
+Quantum information science is 
+an exciting field that draws from information theory, computer science, and quantum mechanics to process information in fundamentally new ways.
+
 Quantum mechanics emerged in the 1920s to describe certain puzzling behaviors of elementary constituents of matter and light.
 It revolutionized physics and chemistry and led to the inventions like transistors, lasers, and GPS.
 Subsequently, we came to understand that information itself can be acquired, encoded, and manipulated in quantum systems, giving birth to the new field of quantum information science.
